@@ -25,9 +25,28 @@
       margin-bottom: 40px;
     }
 
-    h1 {
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .headshot {
+      width: 180px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .hero-text h1 {
       font-size: 2.2rem;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
+    }
+
+    .hero-text p {
+      margin: 0;
     }
 
     p {
@@ -71,6 +90,21 @@
       background-color: #0a58ca;
       color: white;
     }
+
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .headshot {
+        width: 195px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 
@@ -78,13 +112,13 @@
   <div class="container">
 
     <header>
-      <div style="display:flex; align-items:center; gap:20px;">
-  <img src="/headshot.webp" alt="Camilo Correa" style="width:180px; max-width:100%;">
-  <div>
-    <h1>Camilo Correa, MD</h1>
-    <p>Surgical Oncology | Pancreatic and Hepatobiliary Disease</p>
-  </div>
-</div>
+      <div class="hero">
+        <img src="/headshot.webp" alt="Camilo Correa" class="headshot">
+        <div class="hero-text">
+          <h1>Camilo Correa, MD</h1>
+          <p>Surgical Oncology | Pancreatic and Hepatobiliary Disease</p>
+        </div>
+      </div>
 
       <nav>
         <a href="/about.html">About</a>
@@ -94,9 +128,7 @@
 
     <section class="section">
       <p>
-        This site provides clear, practical information about pancreatic 
-        and hepatobiliary diseases, with a focus on how decisions are made
-        in real clinical settings.
+        This site is about how complex surgical decisions are made in pancreatic and hepatobiliary disease.
       </p>
 
       <p>
