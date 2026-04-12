@@ -1,354 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camilo Correa, MD | Surgical Oncology</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <title>Camilo Correa, MD | Hepatobiliary Surgical Oncology | New York City</title>
+  <meta name="description" content="Dr. Camilo Correa is a hepatobiliary surgical oncologist at Mount Sinai in New York City, specializing in pancreatic cancer, liver tumors, bile duct cancer, gallbladder cancer, and complex upper GI surgery.">
+  <meta name="keywords" content="hepatobiliary surgeon NYC, pancreatic cancer surgeon New York, liver tumor surgery, bile duct cancer, gallbladder cancer, whipple surgery Manhattan, surgical oncologist Mount Sinai">
+  <meta name="author" content="Camilo Correa, MD">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vincrito.github.io/">
 
-/* ===== BASE ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vincrito.github.io/">
+  <meta property="og:title" content="Camilo Correa, MD | Hepatobiliary Surgical Oncology NYC">
+  <meta property="og:description" content="Surgical oncology for pancreas, liver, bile duct, and upper GI cancers at Mount Sinai, New York City.">
+  <meta property="og:image" content="https://vincrito.github.io/headshot.webp">
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #111;
-  line-height: 1.6;
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Camilo Correa, MD | Hepatobiliary Surgical Oncology NYC">
+  <meta name="twitter:description" content="Surgical oncology for pancreas, liver, bile duct, and upper GI cancers at Mount Sinai, New York City.">
 
-/* ===== LAYOUT ===== */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 24px;
-}
+  <link rel="stylesheet" href="styles.css">
 
-.section {
-  padding: 50px 0;
-  border-top: 1px solid #eee;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  border-bottom: 1px solid #eee;
-}
-
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand img {
-  height: 40px;
-}
-
-.brand-text {
-  font-size: 14px;
-  color: #555;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-}
-
-/* ===== HERO ===== */
-.hero {
-  padding: 60px 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.hero-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-
-.hero-headshot {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.9);
-}
-
-.hero-text h1 {
-  font-size: 32px;
-  margin-bottom: 5px;
-}
-
-.hero-text h3 {
-  font-weight: normal;
-  color: #555;
-  font-size: 16px;
-}
-
-.hero p {
-  margin: 20px 0;
-  max-width: 600px;
-}
-
-.buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 12px 18px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.btn-primary {
-  background: #0a66c2;
-  color: white;
-}
-
-.btn-outline {
-  border: 1px solid #0a66c2;
-  color: #0a66c2;
-  background: transparent;
-}
-
-/* ===== GRID ===== */
-.grid {
-  display: grid;
-  gap: 20px;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-/* ===== CONTACT ===== */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-}
-
-iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
-  margin-top: 20px;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  padding: 20px;
-  font-size: 13px;
-  color: #666;
-  border-top: 1px solid #eee;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-  .hero-grid {
-    grid-template-columns: 1fr;
+  <!-- JSON-LD: Physician + MedicalOrganization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Physician",
+        "@id": "https://vincrito.github.io/#physician",
+        "name": "Camilo Correa, MD",
+        "description": "Hepatobiliary surgical oncologist specializing in pancreatic cancer, liver tumors, bile duct cancer, gallbladder cancer, and complex upper GI surgery.",
+        "medicalSpecialty": "SurgicalOncology",
+        "url": "https://vincrito.github.io/",
+        "image": "https://vincrito.github.io/headshot.webp",
+        "telephone": "+12125238887",
+        "email": "correa.surgonc@mountsinai.org",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "440 West 114th Street",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10025",
+          "addressCountry": "US"
+        },
+        "worksFor": {
+          "@type": "MedicalOrganization",
+          "@id": "https://vincrito.github.io/#organization",
+          "name": "Mount Sinai Health System",
+          "url": "https://www.mountsinai.org"
+        }
+      },
+      {
+        "@type": "MedicalOrganization",
+        "@id": "https://vincrito.github.io/#organization",
+        "name": "Mount Sinai Health System",
+        "url": "https://www.mountsinai.org",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "440 West 114th Street",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10025",
+          "addressCountry": "US"
+        }
+      }
+    ]
   }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px
-  }
-
-  .hero-headshot {
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-  }
-
-.hero-text h1 {
-    font-size: 26px;
-    line-height: 1.1;
-  }
-
-  .hero-text h3 {
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-  }
-}
-
-</style>
+  </script>
 </head>
 
 <body>
 
 <!-- ===== NAVBAR ===== -->
-<div class="navbar">
+<nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
 
-    <div class="brand">
-      <img src="logo-color.png" alt="Mount Sinai Logo">
-      
-    </div>
+    <a href="/" class="brand">
+      <img src="logo-color.png" alt="Mount Sinai">
+      <div class="brand-divider"></div>
+      <div class="brand-text">
+        Camilo Correa, MD
+        <span>Surgical Oncology</span>
+      </div>
+    </a>
 
-    <div class="nav-links">
-      <a href="#">About</a>
-      <a href="#">Conditions</a>
-      <a href="#">Resources</a>
-      <a href="#">Referring</a>
-      <a href="#">Contact</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="11" x2="19" y2="11"/>
+        <line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="conditions/">Conditions</a>
+      <a href="resources/">Patient Resources</a>
+      <a href="videos.html">Videos</a>
+      <a href="for-referring-providers.html">For Providers</a>
+      <a href="contact.html" class="btn-nav">Contact</a>
     </div>
 
   </div>
-</div>
+</nav>
 
 <!-- ===== HERO ===== -->
-<div class="hero container">
+<section class="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-grid">
 
-  <div class="hero-grid">
+      <!-- LEFT -->
+      <div>
+        <div class="hero-meta">
+          <img src="headshot.webp" alt="Camilo Correa, MD" class="hero-headshot">
+          <div class="hero-id">
+            <h1>Camilo Correa, MD</h1>
+            <div class="title">Hepatobiliary Surgical Oncologist</div>
+            <div class="credentials">Mount Sinai Health System &middot; New York, NY</div>
+          </div>
+        </div>
 
-    <!-- LEFT -->
-    <div>
+        <p>
+          Multidisciplinary surgical care for cancers of the pancreas, liver, bile ducts, and
+          upper GI tract &mdash; with an emphasis on thoughtful decision-making, clear communication,
+          and management of complex and high-risk cases.
+        </p>
 
-      <div class="hero-header">
-        <img src="headshot.webp" alt="Camilo Correa" class="hero-headshot">
-
-        <div class="hero-text">
-          <h1>Camilo Correa, MD</h1>
-          <h3>Surgical oncology for pancreas, liver, and upper GI cancers</h3>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request an Appointment</a>
+          <a href="for-referring-providers.html" class="btn btn-outline btn-lg">Refer a Patient</a>
         </div>
       </div>
 
-      <p>
-        Multidisciplinary care for complex cancer problems, with a focus on clear guidance and thoughtful decision-making.
-      </p>
+      <!-- RIGHT -->
+      <div class="hero-card" aria-label="Clinical focus areas">
+        <h3>Clinical Focus</h3>
+        <ul>
+          <li>Pancreatic Cancer</li>
+          <li>Pancreatic Cysts</li>
+          <li>Liver Tumors &amp; Metastases</li>
+          <li>Bile Duct Cancer (Cholangiocarcinoma)</li>
+          <li>Gallbladder Cancer</li>
+          <li>Gastric &amp; Upper GI Cancers</li>
+          <li>Second Opinions</li>
+        </ul>
+      </div>
 
-      <div class="buttons">
-        <button class="btn btn-primary">Request Appointment</button>
-        <button class="btn btn-outline">Refer a Patient</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONDITIONS GRID ===== -->
+<section class="section" aria-labelledby="conditions-heading">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title" id="conditions-heading">Conditions Treated</h2>
+    <p class="section-intro">Complex hepatobiliary and upper GI cancers require specialized surgical expertise and multidisciplinary coordination. Each condition below has dedicated resources to help patients and families understand their diagnosis and options.</p>
+
+    <div class="grid grid-3 mt-32">
+
+      <a href="conditions/pancreatic-cancer.html" class="condition-card">
+        <h3>Pancreatic Cancer</h3>
+        <p>Surgical evaluation, resectability assessment, and Whipple or distal pancreatectomy when appropriate.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+      <a href="conditions/pancreatic-cysts.html" class="condition-card">
+        <h3>Pancreatic Cysts</h3>
+        <p>Risk stratification of IPMN, MCN, and other cystic lesions &mdash; surveillance or surgery based on evidence.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+      <a href="conditions/liver-tumors.html" class="condition-card">
+        <h3>Liver Tumors &amp; Metastases</h3>
+        <p>Hepatocellular carcinoma, liver metastases from colorectal and other primaries, and benign liver masses.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+      <a href="conditions/bile-duct-cancer.html" class="condition-card">
+        <h3>Bile Duct Cancer</h3>
+        <p>Hilar and distal cholangiocarcinoma &mdash; complex resections requiring careful staging and planning.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+      <a href="conditions/gallbladder-cancer.html" class="condition-card">
+        <h3>Gallbladder Cancer</h3>
+        <p>Incidental and known gallbladder cancer &mdash; staging, resectability, and appropriate surgical management.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+      <a href="conditions/gastric-upper-gi.html" class="condition-card">
+        <h3>Gastric &amp; Upper GI</h3>
+        <p>Gastric cancer, GI stromal tumors (GIST), and complex upper GI cases requiring surgical oncology.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+
+    </div>
+
+    <p class="mt-24"><a href="conditions/second-opinions.html" class="btn btn-outline-navy">Seeking a Second Opinion? &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ===== FOR PATIENTS ===== -->
+<section class="section" style="background: var(--gray-100);" aria-labelledby="patients-heading">
+  <div class="container">
+    <p class="section-label">For Patients</p>
+    <h2 class="section-title" id="patients-heading">What to Expect</h2>
+    <p class="section-intro">A new diagnosis raises many questions. These resources are designed to help you navigate the process &mdash; from your first visit through surgery and beyond.</p>
+
+    <div class="grid grid-3 mt-32">
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#128197;</div>
+        <h3>Your First Visit</h3>
+        <p>What happens at your initial consultation, what to bring, and how to prepare for a productive conversation about your case.</p>
+        <a href="for-patients.html#first-visit" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;">Read more &rarr;</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#128203;</div>
+        <h3>Understanding Your Diagnosis</h3>
+        <p>How to interpret imaging reports, pathology results, and staging &mdash; explained in plain language.</p>
+        <a href="resources/" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;">Browse resources &rarr;</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#9878;&#65039;</div>
+        <h3>When Is Surgery the Right Choice?</h3>
+        <p>Surgery is not always the answer. Understanding resectability, risk, and alternatives helps you make an informed decision.</p>
+        <a href="for-patients.html#surgery-decisions" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;">Learn more &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section class="section" aria-labelledby="approach-heading">
+  <div class="container split-3-2">
+
+    <div>
+      <p class="section-label">Approach</p>
+      <h2 class="section-title" id="approach-heading">Complex Problems Require More Than Technical Skill</h2>
+      <p style="color:var(--text-muted);line-height:1.75;margin-bottom:20px;">
+        A large part of surgical oncology is not technical &mdash; it is judgment. The question is rarely
+        &ldquo;can an operation be done,&rdquo; but whether it should be done, when, and under what conditions.
+      </p>
+      <p style="color:var(--text-muted);line-height:1.75;margin-bottom:20px;">
+        Care is guided by multidisciplinary evaluation: surgery, medical oncology, radiation,
+        radiology, and gastroenterology working together. Many patients seen here have already been
+        evaluated elsewhere or present with problems that do not have a single obvious solution.
+      </p>
+      <p style="color:var(--text-muted);line-height:1.75;">
+        The goal is to make decisions that are oncologically sound, technically appropriate, and
+        aligned with what matters to the patient.
+      </p>
+      <a href="about.html" class="btn btn-outline-navy mt-24">About Dr. Correa &rarr;</a>
+    </div>
+
+    <div>
+      <div class="card" style="background:var(--gray-100);border-color:transparent;">
+        <p class="section-label" style="margin-bottom:18px;">Contact</p>
+        <div class="info-block">
+          <div class="info-icon" aria-hidden="true">&#128222;</div>
+          <div>
+            <div class="info-label">Phone</div>
+            <div class="info-value"><a href="tel:+12125238887">(212) 523-8887</a></div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon" aria-hidden="true">&#9993;&#65039;</div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-value"><a href="mailto:correa.surgonc@mountsinai.org">correa.surgonc@mountsinai.org</a></div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon" aria-hidden="true">&#128205;</div>
+          <div>
+            <div class="info-label">Address</div>
+            <div class="info-value">440 West 114th Street<br>New York, NY 10025</div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary mt-24" style="width:100%;justify-content:center;">Request an Appointment</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REFERRING PROVIDERS BAND ===== -->
+<section class="cta-band" aria-labelledby="refer-heading">
+  <div class="container">
+    <h2 id="refer-heading">Referring a Patient?</h2>
+    <p>Same-week consultations available for urgent oncology cases. Clinical criteria, insurance, and secure referral options &mdash; all in one place.</p>
+    <div class="btn-group">
+      <a href="for-referring-providers.html" class="btn btn-primary btn-lg">Referral Information</a>
+      <a href="tel:+12125238887" class="btn btn-outline btn-lg">Call (212) 523-8887</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="logo-color.png" alt="Mount Sinai">
+        <p>Camilo Correa, MD &mdash; Hepatobiliary Surgical Oncology at Mount Sinai Health System, New York City.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="conditions/pancreatic-cancer.html">Pancreatic Cancer</a></li>
+          <li><a href="conditions/pancreatic-cysts.html">Pancreatic Cysts</a></li>
+          <li><a href="conditions/liver-tumors.html">Liver Tumors</a></li>
+          <li><a href="conditions/bile-duct-cancer.html">Bile Duct Cancer</a></li>
+          <li><a href="conditions/gallbladder-cancer.html">Gallbladder Cancer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="about.html">About Dr. Correa</a></li>
+          <li><a href="for-patients.html">For Patients</a></li>
+          <li><a href="for-referring-providers.html">For Providers</a></li>
+          <li><a href="resources/">Patient Resources</a></li>
+          <li><a href="videos.html">Videos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+12125238887">(212) 523-8887</a></li>
+          <li><a href="mailto:correa.surgonc@mountsinai.org">Email</a></li>
+          <li><a href="contact.html">Appointment Request</a></li>
+        </ul>
       </div>
 
     </div>
 
-    <!-- RIGHT -->
-    <div class="card">
-      <h3>Clinical Focus</h3>
-      <p>Pancreas, liver, and upper gastrointestinal cancers</p>
-      <ul>
-        <li>Pancreatic cysts</li>
-        <li>Pancreatic cancer</li>
-        <li>Liver tumors</li>
-        <li>Second opinions</li>
-      </ul>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Camilo Correa, MD. All rights reserved.</span>
+      <span>440 West 114th Street, New York, NY 10025</span>
     </div>
-
   </div>
-</div>
+</footer>
 
-<!-- ===== CLINICAL FOCUS ===== -->
-<div class="section container">
-  <h2>Clinical Focus</h2>
-
-  <div class="grid grid-3">
-    <div class="card">Pancreatic Cysts</div>
-    <div class="card">Pancreatic Cancer</div>
-    <div class="card">Liver Tumors</div>
-    <div class="card">Bile Duct & Gallbladder</div>
-    <div class="card">Gastric & Upper GI</div>
-    <div class="card">Second Opinions</div>
-  </div>
-</div>
-
-<!-- ===== PATIENT SECTION ===== -->
-<div class="section container">
-  <h2>For Patients</h2>
-
-  <div class="grid">
-    <div class="card">What to expect at your first visit</div>
-    <div class="card">Understanding your diagnosis</div>
-    <div class="card">When is surgery necessary?</div>
-  </div>
-</div>
-
-<!-- ===== APPROACH ===== -->
-<div class="section container">
-  <h2>Approach</h2>
-  <p>
-    Care is guided by multidisciplinary evaluation, with a focus on appropriate treatment selection, coordination across specialties, and management of complex and high-risk cases.
-  </p>
-</div>
-
-<!-- ===== CONTACT ===== -->
-<div class="section container">
-  <h2>Contact</h2>
-
-  <p>
-    <strong>Phone:</strong> (212) 523-8887<br>
-    <strong>Email:</strong> correa.surgonc@mountsinai.org<br>
-    <strong>Address:</strong> 440 West 114th Street, New York, NY 10025
-  </p>
-
-  <form class="contact-form">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" rows="4"></textarea>
-    <button class="btn btn-primary">Send Message</button>
-  </form>
-
-  <iframe src="https://www.google.com/maps?q=440+West+114th+Street+New+York+NY+10025&output=embed"></iframe>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<div class="footer container">
-  © 2026 Camilo Correa, MD | Surgical Oncology
-</div>
+<!-- Mobile nav toggle -->
+<script>
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
 
 </body>
 </html>

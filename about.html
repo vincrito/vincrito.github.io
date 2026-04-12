@@ -3,94 +3,356 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Your Name</title>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      color: #222;
-      background-color: #ffffff;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1 { margin-bottom: 10px; }
-    h2 { margin-top: 30px; }
-    nav { margin-bottom: 30px; }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #0a58ca;
-    }
-    nav a:hover { text-decoration: underline; }
-    p { margin: 12px 0; }
-    ul { margin: 10px 0 20px 20px; }
-  </style>
+  <title>About Camilo Correa, MD | Hepatobiliary Surgical Oncologist | Mount Sinai NYC</title>
+  <meta name="description" content="Learn about Dr. Camilo Correa, a hepatobiliary surgical oncologist at Mount Sinai in New York City. Training, clinical philosophy, and approach to pancreatic and liver cancer surgery.">
+  <meta name="author" content="Camilo Correa, MD">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vincrito.github.io/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://vincrito.github.io/about.html">
+  <meta property="og:title" content="About Camilo Correa, MD | Hepatobiliary Surgical Oncologist">
+  <meta property="og:description" content="Surgical oncologist specializing in pancreatic cancer, liver tumors, and bile duct cancer at Mount Sinai, New York City.">
+  <meta property="og:image" content="https://vincrito.github.io/headshot.webp">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="container">
 
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog.html">Blog</a>
-    </nav>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="container nav-inner">
 
-    <h1>About</h1>
+    <a href="/" class="brand">
+      <img src="logo-color.png" alt="Mount Sinai">
+      <div class="brand-divider"></div>
+      <div class="brand-text">
+        Camilo Correa, MD
+        <span>Surgical Oncology</span>
+      </div>
+    </a>
 
-<p>
-  I am a surgical oncologist specializing in pancreatic and hepatobiliary disease. My practice
-  focuses on cancers of the pancreas, liver, and biliary system, where treatment decisions are
-  often complex and not always straightforward.
-</p>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="19" y2="6"/>
+        <line x1="3" y1="11" x2="19" y2="11"/>
+        <line x1="3" y1="16" x2="19" y2="16"/>
+      </svg>
+    </button>
 
-<p>
-  I work within a multidisciplinary team and am closely involved in coordinating care across
-  surgery, medical oncology, radiation oncology, radiology, and gastroenterology. Many of the
-  patients I see have already been evaluated elsewhere or present with problems that do not have
-  a single obvious solution.
-</p>
-
-<h2>How I approach decisions</h2>
-
-<p>
-  A large part of surgical oncology is not technical, it is judgment. The question is rarely
-  “can an operation be done,” but whether it should be done, when, and under what conditions.
-</p>
-
-<p>
-  The available data is often incomplete or conflicting. Guidelines are useful, but they do not
-  resolve every case. Decisions require weighing risk, understanding uncertainty, and recognizing
-  when multiple reasonable paths exist.
-</p>
-
-<p>
-  The goal is to make decisions that are oncologically sound, technically appropriate, and aligned
-  with what matters to the patient.
-</p>
-
-<h2>What this site is for</h2>
-
-<p>
-  This site is an extension of that approach. It is intended to make complex problems more
-  understandable without oversimplifying them.
-</p>
-
-<p>
-  Some posts are written for patients and families. Others are more technical. All are meant to
-  clarify how decisions are actually made in practice, including where uncertainty remains.
-</p>
-
-<p>
-  This is not a substitute for medical advice. It is a way to make clinical discussions more
-  informed and more productive.
-</p>
+    <div class="nav-links" id="navLinks">
+      <a href="about.html" class="active">About</a>
+      <a href="conditions/">Conditions</a>
+      <a href="resources/">Patient Resources</a>
+      <a href="videos.html">Videos</a>
+      <a href="for-referring-providers.html">For Providers</a>
+      <a href="contact.html" class="btn-nav">Contact</a>
+    </div>
 
   </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">About</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <p class="section-label">Camilo Correa, MD</p>
+    <h1>Hepatobiliary Surgical Oncologist</h1>
+    <p>Mount Sinai Health System &middot; New York, NY</p>
+  </div>
+</header>
+
+<!-- ===== BIO ===== -->
+<section class="section" aria-labelledby="bio-heading">
+  <div class="container split-3-2">
+
+    <div>
+      <p class="section-label">Background</p>
+      <h2 id="bio-heading">About Dr. Correa</h2>
+
+      <p style="color:var(--text-muted);line-height:1.8;margin-top:20px;margin-bottom:18px;">
+        I am a surgical oncologist specializing in pancreatic and hepatobiliary disease. My practice
+        focuses on cancers of the pancreas, liver, and biliary system &mdash; where treatment decisions
+        are often complex and not always straightforward.
+      </p>
+
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:18px;">
+        I work within a multidisciplinary team and am closely involved in coordinating care across
+        surgery, medical oncology, radiation oncology, radiology, and gastroenterology. Many of the
+        patients I see have already been evaluated elsewhere or present with problems that do not have
+        a single obvious solution.
+      </p>
+
+      <p style="color:var(--text-muted);line-height:1.8;">
+        My practice is at Mount Sinai Health System in New York City, where I operate as part of a
+        high-volume program with access to advanced imaging, interventional endoscopy, liver-directed
+        therapies, and clinical trials.
+      </p>
+    </div>
+
+    <div>
+      <img src="headshot.webp" alt="Camilo Correa, MD" style="width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section class="section" style="background:var(--gray-100);" aria-labelledby="philosophy-heading">
+  <div class="container">
+    <p class="section-label">Clinical Philosophy</p>
+    <h2 class="section-title" id="philosophy-heading">How I Approach Decisions</h2>
+    <p class="section-intro">Surgical oncology is as much about judgment as it is about technique.</p>
+
+    <div class="grid grid-3 mt-32">
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#9878;&#65039;</div>
+        <h3>Judgment Over Protocol</h3>
+        <p>A large part of surgical oncology is not technical &mdash; it is judgment. The question is rarely &ldquo;can an operation be done,&rdquo; but whether it should be done, when, and under what conditions.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#128203;</div>
+        <h3>Honest Uncertainty</h3>
+        <p>The available data is often incomplete or conflicting. Guidelines are useful, but they do not resolve every case. Decisions require weighing risk and recognizing when multiple reasonable paths exist.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">&#128101;</div>
+        <h3>Multidisciplinary by Default</h3>
+        <p>No single specialist has the full picture. Every complex case benefits from review across surgery, medical oncology, radiology, gastroenterology, and radiation oncology before a decision is made.</p>
+      </div>
+
+    </div>
+
+    <div class="highlight-strip mt-32">
+      <p>
+        The goal is to make decisions that are oncologically sound, technically appropriate, and
+        aligned with what matters to the patient.
+      </p>
+    </div>
+
+    <div class="mt-48">
+      <p class="section-label">Clinical Areas</p>
+      <h2 class="section-title">Surgical Expertise</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:24px;">
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Pancreaticoduodenectomy (Whipple procedure)</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Bile duct resection and reconstruction</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Distal and total pancreatectomy</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Cholecystectomy with radical re-resection for gallbladder cancer</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Hepatic resection (hemihepatectomy, segmentectomy)</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Gastrectomy (total and subtotal)</div>
+        <div style="padding:12px 0;font-size:14.5px;color:var(--text-muted);">Hepatic arterial infusion pump therapy</div>
+        <div style="padding:12px 0;border-bottom:1px solid var(--gray-200);font-size:14.5px;color:var(--text-muted);">Abdominal and retroperitoneal sarcoma</div>
+        <div></div>
+        <div style="padding:12px 0;font-size:14.5px;color:var(--text-muted);">Robotic and minimally invasive surgery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS ===== -->
+<section class="section" aria-labelledby="credentials-heading">
+  <div class="container split">
+
+    <div>
+      <p class="section-label">Training &amp; Credentials</p>
+      <h2 id="credentials-heading">Education &amp; Training</h2>
+
+      <div style="margin-top:24px;">
+
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <div class="info-label">MD &mdash; Medical Degree</div>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;white-space:nowrap;">2007</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);margin-top:4px;">Facultad de Medicina, Universidad de Antioquia</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:2px;">Medell&iacute;n, Colombia</div>
+        </div>
+
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <div class="info-label">Postdoctoral Research Fellowship &mdash; Pancreas Surgery</div>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;white-space:nowrap;">2009</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);margin-top:4px;">Harvard Medical School &amp; Massachusetts General Hospital</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:2px;">Boston, MA</div>
+        </div>
+
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <div class="info-label">Clinical Research Fellowship &mdash; HPB Surgical Oncology</div>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;white-space:nowrap;">2013</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);margin-top:4px;">Memorial Sloan Kettering Cancer Center</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:2px;">New York, NY</div>
+        </div>
+
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <div class="info-label">General Surgery Residency</div>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;white-space:nowrap;">2016</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);margin-top:4px;">Indiana University School of Medicine</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:2px;">Indianapolis, IN</div>
+        </div>
+
+        <div style="padding:16px 0;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <div class="info-label">Clinical Fellow &mdash; Complex Surgical Oncology</div>
+            <span style="font-size:12px;color:var(--gray-400);font-weight:500;white-space:nowrap;">2018</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);margin-top:4px;">Memorial Sloan Kettering Cancer Center</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:2px;">New York, NY</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">Appointments</p>
+      <h2>Current Positions</h2>
+
+      <div style="margin-top:24px;margin-bottom:48px;">
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="font-size:15px;font-weight:600;color:var(--navy);">Associate Professor of Surgery</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:3px;">Department of Surgery, Division of Surgical Oncology</div>
+          <div style="font-size:13.5px;color:var(--text-muted);">Mount Sinai Health System</div>
+        </div>
+        <div style="padding:16px 0;">
+          <div style="font-size:15px;font-weight:600;color:var(--navy);">Associate Program Director, Complex Surgical Oncology Fellowship</div>
+          <div style="font-size:13.5px;color:var(--text-muted);margin-top:3px;">Icahn School of Medicine at Mount Sinai</div>
+        </div>
+      </div>
+
+      <p class="section-label">Certifications</p>
+      <h2>Board Certifications</h2>
+
+      <div style="margin-top:24px;margin-bottom:48px;">
+        <div style="padding:16px 0;border-bottom:1px solid var(--gray-200);">
+          <div style="font-size:13.5px;color:var(--text-muted);margin-bottom:2px;">American Board of Surgery</div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);">General Surgery</div>
+        </div>
+        <div style="padding:16px 0;">
+          <div style="font-size:13.5px;color:var(--text-muted);margin-bottom:2px;">American Board of Surgery</div>
+          <div style="font-size:15px;font-weight:600;color:var(--navy);">Complex General Surgical Oncology</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== WHAT THIS SITE IS FOR ===== -->
+<section class="section" style="background:var(--gray-100);" aria-labelledby="site-heading">
+  <div class="container" style="max-width:720px;">
+    <p class="section-label">About This Site</p>
+    <h2 id="site-heading">What This Site Is For</h2>
+
+    <p style="color:var(--text-muted);line-height:1.8;margin-top:20px;margin-bottom:18px;">
+      This site is an extension of the clinical approach described above. It is intended to make
+      complex problems more understandable without oversimplifying them.
+    </p>
+
+    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:18px;">
+      Some content is written for patients and families navigating a new diagnosis. Other sections
+      are aimed at referring providers looking for clinical criteria and referral pathways. All of it
+      is meant to clarify how decisions are actually made in practice &mdash; including where uncertainty
+      remains.
+    </p>
+
+    <p style="color:var(--text-muted);line-height:1.8;">
+      This is not a substitute for medical advice. It is a way to make clinical discussions more
+      informed and more productive.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Ready to Schedule a Consultation?</h2>
+    <p>Contact the office to request an appointment or to discuss a referral.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-primary btn-lg">Request an Appointment</a>
+      <a href="for-referring-providers.html" class="btn btn-outline btn-lg">Referring Provider Info</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="logo-color.png" alt="Mount Sinai">
+        <p>Camilo Correa, MD &mdash; Hepatobiliary Surgical Oncology at Mount Sinai Health System, New York City.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Conditions</h4>
+        <ul>
+          <li><a href="conditions/pancreatic-cancer.html">Pancreatic Cancer</a></li>
+          <li><a href="conditions/pancreatic-cysts.html">Pancreatic Cysts</a></li>
+          <li><a href="conditions/liver-tumors.html">Liver Tumors</a></li>
+          <li><a href="conditions/bile-duct-cancer.html">Bile Duct Cancer</a></li>
+          <li><a href="conditions/gallbladder-cancer.html">Gallbladder Cancer</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="about.html">About Dr. Correa</a></li>
+          <li><a href="for-patients.html">For Patients</a></li>
+          <li><a href="for-referring-providers.html">For Providers</a></li>
+          <li><a href="resources/">Patient Resources</a></li>
+          <li><a href="videos.html">Videos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+12125238887">(212) 523-8887</a></li>
+          <li><a href="mailto:correa.surgonc@mountsinai.org">Email</a></li>
+          <li><a href="contact.html">Appointment Request</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Camilo Correa, MD. All rights reserved.</span>
+      <span>440 West 114th Street, New York, NY 10025</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile nav toggle -->
+<script>
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
 </body>
 </html>
