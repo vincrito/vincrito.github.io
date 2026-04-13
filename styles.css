@@ -4,7 +4,7 @@
    ================================================================ */
 
 /* ===== IMPORTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Google Fonts loaded asynchronously via <link> in each HTML <head> */
 
 /* ===== TOKENS ===== */
 :root {
@@ -260,14 +260,14 @@ h4 { font-size: 1.05rem; }
 
 .hero-id .credentials {
   font-size: 13px;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.85);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .hero-id .title {
   font-size: 14.5px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255,255,255,0.95);
   font-weight: 500;
   margin-top: 2px;
 }
@@ -295,7 +295,7 @@ h4 { font-size: 1.05rem; }
   backdrop-filter: blur(4px);
 }
 
-.hero-card h3 {
+.hero-card h2 {
   color: var(--white);
   font-size: 1rem;
   font-weight: 600;
