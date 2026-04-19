@@ -402,18 +402,45 @@
     <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:28px;">Surgery is considered for patients who are generally fit for major surgery and do not have metastatic (distant) disease. The first step is assessing resectability — whether the tumor can be completely removed without injury to critical structures.</p>
 
     <h3 style="font-size:1rem;margin-bottom:16px;">Types of Surgery</h3>
+    <style>
+      .surgery-item details summary{cursor:pointer;list-style:none;}
+      .surgery-item details summary::-webkit-details-marker{display:none;}
+      .surgery-item details[open] .summary-arrow{transform:rotate(90deg);}
+      .summary-arrow{display:inline-block;transition:transform .2s;margin-right:6px;color:var(--blue);}
+    </style>
     <div style="display:grid;gap:12px;margin-bottom:28px;">
-      <div style="border-left:3px solid var(--blue);padding-left:16px;">
-        <strong style="color:var(--navy);display:block;margin-bottom:4px;font-size:14px;">Pancreaticoduodenectomy (Whipple Procedure)</strong>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">For tumors in the head of the pancreas. The head of the pancreas, duodenum, gallbladder, a portion of the bile duct, and part of the stomach are removed. The remaining organs are reconnected to restore digestive function. Operative time is typically 4–6 hours.</p>
+      <!-- Whipple -->
+      <div class="surgery-item" style="border-left:3px solid var(--blue);padding-left:16px;">
+        <details>
+          <summary style="font-size:14px;font-weight:600;color:var(--navy);display:flex;align-items:baseline;gap:4px;">
+            <span class="summary-arrow">&#9658;</span>
+            Pancreaticoduodenectomy (Whipple Procedure)
+          </summary>
+          <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:10px 0 8px;">For tumors in the head of the pancreas. The head of the pancreas, duodenum, gallbladder, a portion of the bile duct, and part of the stomach are removed. The remaining organs are reconnected to restore digestive function. Operative time is typically 4–7 hours.</p>
+          <a href="whipple-procedure.html" style="font-size:13px;color:var(--blue);font-weight:500;text-decoration:none;">Full procedure details &rarr;</a>
+        </details>
       </div>
-      <div style="border-left:3px solid var(--blue);padding-left:16px;">
-        <strong style="color:var(--navy);display:block;margin-bottom:4px;font-size:14px;">Distal Pancreatectomy</strong>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">For tumors in the body or tail. The body and tail of the pancreas, along with the spleen, are removed. Minimally invasive approaches are used when feasible, with generally shorter recovery than the Whipple.</p>
+      <!-- Distal -->
+      <div class="surgery-item" style="border-left:3px solid var(--blue);padding-left:16px;">
+        <details>
+          <summary style="font-size:14px;font-weight:600;color:var(--navy);display:flex;align-items:baseline;gap:4px;">
+            <span class="summary-arrow">&#9658;</span>
+            Distal Pancreatectomy
+          </summary>
+          <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:10px 0 8px;">For tumors in the body or tail. The body and tail of the pancreas, along with the spleen, are removed. Minimally invasive approaches are used when feasible, with generally shorter recovery than the Whipple.</p>
+          <a href="distal-pancreatectomy.html" style="font-size:13px;color:var(--blue);font-weight:500;text-decoration:none;">Full procedure details &rarr;</a>
+        </details>
       </div>
-      <div style="border-left:3px solid var(--blue);padding-left:16px;">
-        <strong style="color:var(--navy);display:block;margin-bottom:4px;font-size:14px;">Total Pancreatectomy</strong>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;">Performed when the tumor affects the entire pancreas or critical vessels cannot be preserved. Patients will need lifelong insulin therapy and careful blood sugar management.</p>
+      <!-- Total -->
+      <div class="surgery-item" style="border-left:3px solid var(--blue);padding-left:16px;">
+        <details>
+          <summary style="font-size:14px;font-weight:600;color:var(--navy);display:flex;align-items:baseline;gap:4px;">
+            <span class="summary-arrow">&#9658;</span>
+            Total Pancreatectomy
+          </summary>
+          <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin:10px 0 8px;">Performed when the tumor affects the entire pancreas or critical vessels cannot be preserved. Patients will need lifelong insulin therapy and pancreatic enzyme replacement after this operation.</p>
+          <a href="total-pancreatectomy.html" style="font-size:13px;color:var(--blue);font-weight:500;text-decoration:none;">Full procedure details &rarr;</a>
+        </details>
       </div>
     </div>
 
