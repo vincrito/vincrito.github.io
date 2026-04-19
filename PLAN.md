@@ -6,6 +6,9 @@
 - Goals: patient education, video library, referring provider hub, SEO/LLM discoverability
 
 ## Completed Work
+- ✅ Site search: Pagefind added to all pages (navbar icon → dark overlay), section anchors, GitHub Action auto-rebuilds on push, .nojekyll added
+- ✅ All canonical URLs updated from vincrito.github.io → correasurgery.com (canonical, OG, JSON-LD, sitemap)
+- ✅ Search Console verified for correasurgery.com via GoDaddy DNS TXT record; sitemap submitted
 - ✅ Cholangiocarcinoma page: biliary drainage language updated — percutaneous drainage preferred for hilar disease; multidisciplinary surgical involvement required before any drainage procedure; risks of wrong-side/incomplete drainage noted throughout (diagnostic list, highlight strip, FAQ, hilar surgery card)
 - ✅ Shared design system (styles.css) + all pages rebuilt
 - ✅ Home link added to navbar on all pages (not index.html)
@@ -95,7 +98,7 @@ robots.txt
 1. ~~**Analytics**~~ ✅ Done
 2. ~~**Expanded pancreatic cancer page**~~ ✅ Done
 3. **Expanded pages for other diagnoses** — Use pancreatic cancer page as template; shared sections (mediports, recovery, chemo) reused as blocks
-4. **Site search** — Discuss adding search bar and function across the site (options: client-side JS index, Pagefind, Google CSE)
+4. ~~**Site search**~~ ✅ Done — Pagefind with navbar magnifying glass icon, dark overlay, section-level anchors, GitHub Action auto-rebuilds index on every push
 5. **Glossary + hover tooltips** — `/glossary.html` + CSS/JS tooltip on tagged terms site-wide; do after content is finalized
 6. ~~**Publications page**~~ ✅ Done — added as section on about.html; 23 papers across 4 disease areas, each linked to PubMed; "View full list on PubMed" links top and bottom
 7. **Residents page** — `/residents/index.html`, no nav link, blocked in robots.txt; decide on JS password gate vs. unlisted-only
