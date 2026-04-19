@@ -1082,3 +1082,96 @@ textarea.form-control {
   color: rgba(240,244,248,0.7);
   font-size: 13.5px;
 }
+
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+}
+.print-btn:hover { color: rgba(255,255,255,0.78); border-color: rgba(255,255,255,0.35); }
+
+/* Elements only visible when printing */
+.print-only { display: none; }
+
+@media print {
+  .print-only { display: block; }
+
+  /* Hide chrome */
+  .navbar, .breadcrumb, .footer, .cta-band,
+  .search-overlay, .search-icon-btn, .print-btn-wrap { display: none !important; }
+
+  /* Page setup */
+  @page { margin: 2cm 2.2cm 3cm; }
+  body { font-size: 11pt; color: #111; background: #fff; }
+
+  /* Typography */
+  h1 { font-size: 20pt; margin-bottom: 6pt; }
+  h2 { font-size: 14pt; margin-top: 18pt; margin-bottom: 6pt; page-break-after: avoid; }
+  h3 { font-size: 12pt; margin-top: 12pt; margin-bottom: 4pt; page-break-after: avoid; }
+  p, li { line-height: 1.65; color: #333; font-size: 10.5pt; }
+
+  /* Page header */
+  .page-header { background: none !important; padding: 0 0 16pt; border-bottom: 1.5pt solid #111; margin-bottom: 16pt; }
+  .page-header h1 { color: #111; }
+  .page-header p { color: #444; font-size: 11pt; }
+  .section-label { font-size: 8pt; letter-spacing: .08em; color: #666; text-transform: uppercase; }
+
+  /* Sections */
+  .section { padding: 16pt 0; background: none !important; }
+  .section + .section { border-top: 0.5pt solid #ddd; }
+  .container { max-width: 100% !important; padding: 0 !important; }
+
+  /* Border-left callout items */
+  [style*="border-left"] { border-left: 2pt solid #1a3a5c !important; padding-left: 10pt !important; margin-bottom: 8pt; }
+
+  /* Figure */
+  figure { page-break-inside: avoid; }
+  figure img { max-width: 70% !important; }
+  figcaption { font-size: 8.5pt; color: #666; }
+
+  /* Links — suppress URL after */
+  a[href]::after { content: none; }
+
+  /* Avoid breaking inside callout items */
+  [style*="border-left"] { page-break-inside: avoid; }
+
+  /* Print letterhead (first-page only, flows naturally at top of page 1) */
+  .print-letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14pt;
+    border-bottom: 2pt solid #1a3a5c;
+    margin-bottom: 22pt;
+  }
+  .print-letterhead img { height: 38pt; width: auto; }
+  .print-letterhead .pl-name { text-align: right; }
+  .print-letterhead .pl-name strong { font-size: 14pt; color: #111; display: block; margin-bottom: 3pt; }
+  .print-letterhead .pl-name span { font-size: 9pt; color: #555; line-height: 1.7; }
+
+  /* Running footer — fixed to bottom of every printed page */
+  .print-brand {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 7pt 2.2cm;
+    border-top: 0.75pt solid #aaa;
+    font-size: 8.5pt;
+    color: #666;
+    text-align: center;
+    background: #fff;
+  }
+}
