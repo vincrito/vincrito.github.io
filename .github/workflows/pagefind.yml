@@ -1,10 +1,7 @@
 name: Rebuild Pagefind search index
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - '_pagefind/**'
+  workflow_dispatch:
 
 jobs:
   pagefind:
