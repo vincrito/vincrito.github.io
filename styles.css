@@ -986,3 +986,99 @@ textarea.form-control {
   .hero-meta { flex-direction: column; align-items: flex-start; gap: 14px; }
   .hero-headshot { width: 84px; height: 84px; }
 }
+
+/* ===== SEARCH ===== */
+.search-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+.search-icon-btn:hover { opacity: 1; }
+.search-icon-btn svg { display: block; }
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 25, 50, 0.93);
+  z-index: 2000;
+  padding: 72px 20px 40px;
+  overflow-y: auto;
+}
+.search-overlay.open { display: block; }
+
+.search-overlay-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-close {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.search-close:hover { color: white; }
+
+/* Pagefind UI theme — light text on dark overlay */
+#search {
+  --pagefind-ui-scale: 0.95;
+  --pagefind-ui-primary: #7eb8f7;
+  --pagefind-ui-text: #f0f4f8;
+  --pagefind-ui-background: rgba(255,255,255,0.07);
+  --pagefind-ui-border: rgba(255,255,255,0.18);
+  --pagefind-ui-tag: rgba(255,255,255,0.12);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-image-border-radius: 6px;
+  --pagefind-ui-font: 'Inter', sans-serif;
+}
+
+/* Force legible colors on all Pagefind-generated elements */
+.search-overlay .pagefind-ui__search-input {
+  color: #0f2340 !important;
+  background: #ffffff !important;
+}
+.search-overlay .pagefind-ui__result {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: 10px;
+}
+.search-overlay .pagefind-ui__result-title a,
+.search-overlay .pagefind-ui__result-excerpt {
+  color: #f0f4f8 !important;
+}
+.search-overlay .pagefind-ui__result-title a {
+  font-weight: 600;
+  font-size: 15px;
+}
+.search-overlay .pagefind-ui__result-excerpt {
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin-top: 4px;
+}
+.search-overlay mark {
+  background: rgba(126,184,247,0.35);
+  color: #ffffff;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.search-overlay .pagefind-ui__message {
+  color: rgba(240,244,248,0.7);
+  font-size: 13.5px;
+}
