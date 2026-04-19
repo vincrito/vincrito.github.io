@@ -88,6 +88,9 @@ robots.txt
 - ⬜ Total pancreatectomy figure (no image yet — placeholder page live)
 - ⬜ Cancer locations: need 4 separate unlabeled images (resectable, borderline, unresectable, metastatic) to replace current 4-panel labeled composite
 
+## Pending Follow-Ups
+- ⏰ **Search Console check (after ~April 26)** — Log into [search.google.com/search-console](https://search.google.com/search-console) for correasurgery.com → Sitemaps → confirm all 20 URLs discovered and indexed. Check Coverage report for any errors.
+
 ## Next Steps (Priority Order)
 1. ~~**Analytics**~~ ✅ Done
 2. ~~**Expanded pancreatic cancer page**~~ ✅ Done
