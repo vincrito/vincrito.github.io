@@ -50,12 +50,16 @@
 </nav>
 <main>
 
+<!-- PRINT LETTERHEAD (hidden on screen; appears at top of page 1 when printing) -->
+<div class="print-only print-letterhead" aria-hidden="true">
+  <img src="../logo-color.png" alt="Mount Sinai">
+  <div class="pl-name">
+    <strong>Camilo Correa, MD</strong>
+    <span>Associate Professor of Surgery<br>Hepatobiliary Surgical Oncology<br>Mount Sinai Health System</span>
+  </div>
+</div>
+
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <div class="container"><ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="index.html">Conditions</a></li>
-    <li><a href="pancreatic-cancer.html">Pancreatic Cancer</a></li>
-    <li aria-current="page">Distal Pancreatectomy</li>
   </ol></div>
 </nav>
 
@@ -63,7 +67,13 @@
   <div class="container">
     <p class="section-label">Surgery</p>
     <h1>Distal Pancreatectomy</h1>
-    <p>Surgery for tumors in the body or tail of the pancreas — often performed minimally invasively.</p>
+    <p>Surgery for tumors in the body or tail of the pancreas &mdash; often performed minimally invasively.</p>
+    <div class="print-btn-wrap" style="margin-top:20px;">
+      <button class="print-btn" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
   </div>
 </header>
 
@@ -126,6 +136,11 @@
     <p style="font-size:14px;color:var(--text-muted);line-height:1.8;">Adjuvant chemotherapy is recommended for most patients after distal pancreatectomy for cancer, beginning 4–8 weeks post-operatively. Follow-up CT scans every 3–6 months monitor for recurrence.</p>
   </div>
 </section>
+
+<!-- PRINT FOOTER (hidden on screen; repeats on every printed page) -->
+<div class="print-only print-brand" aria-hidden="true">
+  Camilo Correa, MD &bull; (212) 523-8887 &bull; correa.surgonc@mountsinai.org &bull; correasurgery.com
+</div>
 
 <!-- CTA -->
 <section class="cta-band">
