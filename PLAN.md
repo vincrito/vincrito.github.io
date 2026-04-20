@@ -5,6 +5,14 @@
 - Plain HTML/CSS, GitHub Pages (vincrito.github.io), no build tools
 - Goals: patient education, video library, referring provider hub, SEO/LLM discoverability
 
+## Print Template (apply to future procedure/condition pages)
+Three components, all in `styles.css` (`.print-only`, `.print-letterhead`, `.print-brand`, `@media print`):
+1. **Letterhead** — `<div class="print-only print-letterhead">` placed right after `<main>`, before `<nav class="breadcrumb">`. Logo left, name + stacked credentials right.
+2. **Print button** — `<div class="print-btn-wrap">` inside `<header class="page-header">` after the subtitle `<p>`. Calls `window.print()`.
+3. **Running footer** — `<div class="print-only print-brand">` placed before `<!-- CTA -->`. Single line: name · phone · email · website. Fixed to bottom of every printed page.
+
+Currently applied to: whipple-procedure.html, distal-pancreatectomy.html, total-pancreatectomy.html
+
 ## Completed Work
 - ✅ Site search: Pagefind added to all pages (navbar icon → dark overlay), section anchors, GitHub Action auto-rebuilds on push, .nojekyll added
 - ✅ All canonical URLs updated from vincrito.github.io → correasurgery.com (canonical, OG, JSON-LD, sitemap)
