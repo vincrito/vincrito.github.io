@@ -27,12 +27,13 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav class="navbar" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="/" class="brand">
-      <img src="logo-color.png" alt="Mount Sinai">
-      <div class="brand-divider"></div>
+      
+      
       <div class="brand-text">Camilo Correa, MD<span>Surgical Oncology</span></div>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -48,7 +49,7 @@
     </div>
   </div>
 </nav>
-<main>
+<main id="main-content">
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <div class="container"><ol>
@@ -60,7 +61,7 @@
   <div class="container">
     <p class="section-label">Contact</p>
     <h1>Request an Appointment</h1>
-    <p>Complete the form below or call our office directly. We respond to all appointment requests within one business day.</p>
+    <p>Contact our office directly by phone or email. We respond to all appointment requests within one business day.</p>
   </div>
 </header>
 
@@ -68,88 +69,16 @@
   <div class="container split-3-2">
     <div>
       <p class="section-label">Appointment Request</p>
-      <h2>Send Us a Message</h2>
-      <p style="color:var(--text-muted);line-height:1.8;margin-top:12px;margin-bottom:28px;font-size:14.5px;">Please provide as much information as possible so we can prepare for your consultation. All fields marked with * are required. This form is not monitored 24/7 &mdash; for urgent medical concerns please call our office directly.</p>
-
-      <!-- Replace FORMSPREE_ID with your Formspree endpoint ID -->
-      <form action="https://formspree.io/f/mjgjboqp" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Appointment Request - correasurgery.com">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first_name">First name *</label>
-            <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
-          </div>
-          <div class="form-group">
-            <label for="last_name">Last name *</label>
-            <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email address *</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="visit_type">Type of visit *</label>
-          <select id="visit_type" name="visit_type" required>
-            <option value="" disabled selected>Select one&hellip;</option>
-            <option value="new_patient">New patient consultation</option>
-            <option value="second_opinion">Second opinion</option>
-            <option value="provider_referral">Provider referral</option>
-            <option value="follow_up">Existing patient follow-up</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="condition">Primary diagnosis or reason for visit *</label>
-          <select id="condition" name="condition" required>
-            <option value="" disabled selected>Select a condition&hellip;</option>
-            <option value="pancreatic_cancer">Pancreatic cancer</option>
-            <option value="pancreatic_cyst">Pancreatic cyst (IPMN or other)</option>
-            <option value="liver_tumors">Liver tumor or liver metastases</option>
-            <option value="bile_duct">Bile duct cancer (cholangiocarcinoma)</option>
-            <option value="gallbladder">Gallbladder cancer</option>
-            <option value="gastric">Gastric or upper GI cancer</option>
-            <option value="net">Neuroendocrine tumor</option>
-            <option value="sarcoma">Retroperitoneal sarcoma</option>
-            <option value="other">Other / not sure</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Additional information</label>
-          <textarea id="message" name="message" rows="5" placeholder="Please describe your situation, any prior treatments, or specific questions you have for Dr. Correa."></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="referring_provider">Referring provider name (if applicable)</label>
-          <input type="text" id="referring_provider" name="referring_provider" autocomplete="off">
-        </div>
-
-        <div class="form-group">
-          <label for="referring_contact">Referring provider contact information</label>
-          <input type="text" id="referring_contact" name="referring_contact" autocomplete="off" placeholder="Phone, fax, or email">
-        </div>
-
-        <div class="form-group" style="margin-top:8px;">
-          <label style="display:flex;align-items:flex-start;gap:12px;font-weight:400;cursor:pointer;">
-            <input type="checkbox" name="consent" required style="width:16px;height:16px;margin-top:2px;flex-shrink:0;">
-            <span style="font-size:13.5px;color:var(--text-muted);line-height:1.6;">I understand that submitting this form does not establish a doctor-patient relationship and does not constitute medical advice. For medical emergencies, call 911.</span>
-          </label>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-lg" style="margin-top:24px;width:100%;justify-content:center;">Submit Request &rarr;</button>
-      </form>
+      <h2>How to Request an Appointment</h2>
+      <p style="color:var(--text-muted);line-height:1.8;margin-top:12px;margin-bottom:28px;font-size:14.5px;">To schedule a consultation, please contact our office directly by phone or email using the information on this page. We respond to all appointment requests within one business day.</p>
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px;font-size:14.5px;">When reaching out, it is helpful to have the following available:</p>
+      <ul style="color:var(--text-muted);font-size:14.5px;line-height:1.9;padding-left:20px;margin-bottom:28px;">
+        <li>Type of visit (new patient, second opinion, or provider referral)</li>
+        <li>Primary diagnosis or reason for consultation</li>
+        <li>Referring provider name and contact information, if applicable</li>
+        <li>Any prior treatment history relevant to your case</li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">For medical emergencies, call 911 or go to the nearest emergency room.</p>
     </div>
 
     <div>
@@ -279,7 +208,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><img src="logo-color.png" alt="Mount Sinai"><p>Camilo Correa, MD &mdash; Hepatobiliary Surgical Oncology at Mount Sinai Health System. Serving New York City, New Jersey, Westchester County, and the greater NY metropolitan area.</p></div>
+      <div class="footer-brand"><p>Camilo Correa, MD &mdash; Hepatobiliary Surgical Oncology at Mount Sinai Health System. Serving New York City, New Jersey, Westchester County, and the greater NY metropolitan area.</p></div>
       <div class="footer-col"><h3>Conditions</h3><ul>
         <li><a href="conditions/pancreatic-cancer.html">Pancreatic Cancer</a></li>
         <li><a href="conditions/pancreatic-cysts.html">Pancreatic Cysts</a></li>
