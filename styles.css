@@ -227,7 +227,7 @@ h4 { font-size: 1.05rem; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 11px;
   color: var(--navy);
 }
 
@@ -1014,11 +1014,14 @@ textarea.form-control {
   border: none;
   cursor: pointer;
   color: inherit;
-  padding: 4px 6px;
+  padding: 10px;
   display: flex;
   align-items: center;
   opacity: 0.75;
   flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
 }
 .search-icon-btn:hover { opacity: 1; }
 .search-icon-btn svg { display: block; }
@@ -1050,7 +1053,9 @@ textarea.form-control {
   font-size: 36px;
   line-height: 1;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 8px 12px;
+  min-width: 44px;
+  min-height: 44px;
 }
 .search-close:hover { color: white; }
 
@@ -1195,4 +1200,21 @@ textarea.form-control {
     text-align: center;
     background: #fff;
   }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== STICKY TOC OFFSET ===== */
+h2[id], h3[id] {
+  scroll-margin-top: 130px;
 }

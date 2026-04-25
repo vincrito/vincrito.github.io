@@ -233,7 +233,16 @@
   document.getElementById('searchToggle').addEventListener('click',_openSearch);
   document.getElementById('searchClose').addEventListener('click',_closeSearch);
   document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)_closeSearch();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')_closeSearch();});
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){_closeSearch();return;}
+    var overlay=document.getElementById("search-overlay");
+    if(!overlay.classList.contains("open"))return;
+    if(e.key!=="Tab")return;
+    var focusable=overlay.querySelectorAll("button,[href],input,select,textarea,[tabindex]:not([tabindex=-1])");
+    var first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  });
 </script>
 </body>
 </html>

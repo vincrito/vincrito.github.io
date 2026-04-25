@@ -254,13 +254,13 @@
         <div class="feature-icon" aria-hidden="true">&#9878;&#65039;</div>
         <h3>When Is Surgery the Right Choice?</h3>
         <p>Surgery is a local therapy. Understanding how it fits with chemotherapy, immunotherapy, and other treatments — and when it doesn't — is central to good oncologic care.</p>
-        <a href="role-of-surgery.html" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;">Learn more &rarr;</a>
+        <a href="role-of-surgery.html" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--blue);margin-top:16px;">Learn more about the role of surgery &rarr;</a>
       </div>
 
     </div>
 
     <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-top:24px;display:flex;align-items:flex-start;gap:16px;">
-      <div style="font-size:22px;flex-shrink:0;margin-top:2px;">&#128172;</div>
+      <div style="font-size:22px;flex-shrink:0;margin-top:2px;" aria-hidden="true">&#128172;</div>
       <div>
         <strong style="color:var(--navy);font-size:15px;">Se habla espa&ntilde;ol &mdash; Si parla italiano</strong>
         <p style="font-size:13.5px;color:var(--text-muted);margin:6px 0 0;line-height:1.65;">Dr. Correa and his office staff are native Spanish speakers. He is also fluent in Italian. Consultations can be conducted in Spanish or Italian &mdash; whichever makes it easier for you and your family to understand, ask questions, and feel at ease throughout your care. Office communications and scheduling can be handled in Spanish as well.</p>
@@ -420,7 +420,16 @@
   document.getElementById('searchToggle').addEventListener('click',_openSearch);
   document.getElementById('searchClose').addEventListener('click',_closeSearch);
   document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)_closeSearch();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')_closeSearch();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){_closeSearch();return;}
+    var overlay=document.getElementById('search-overlay');
+    if(!overlay.classList.contains('open'))return;
+    if(e.key!=='Tab')return;
+    var focusable=overlay.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])');
+    var first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  });
 </script>
 </body>
 </html>
