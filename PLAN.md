@@ -5,6 +5,18 @@
 - Plain HTML/CSS, GitHub Pages (vincrito.github.io), no build tools
 - Goals: patient education, video library, referring provider hub, SEO/LLM discoverability
 
+## Compliance Status (Mount Sinai Website Governance Policy)
+- ⏰ **Permission** — formal approval from Digital Marketing & Branding pending; application in progress
+- ✅ **Contact form disabled** — Formspree form removed from contact.html; replaced with phone/email instructions (PHI/HIPAA risk eliminated)
+- ✅ **Mount Sinai branding removed** — logo removed from navbar and footer on all pages; hero background image (Mt-Sinai-Hero.jpg) removed from CSS; `Mt-Sinai-Hero.jpg` still in repo (low risk, not referenced)
+- ✅ **JSON-LD cleaned** — `worksFor: Mount Sinai Health System` and MedicalOrganization node removed from Physician schema
+- ✅ **For Providers page reframed** — "Refer a Patient" → "HPB Surgical Oncology Consultations"; portal tone → educational/informational tone
+- ✅ **Hero CTA buttons removed** — "Request an Appointment" and "Refer a Patient" buttons removed from homepage hero
+- ✅ **WCAG 2.1 AA improvements** — skip navigation links, focus-visible styles, prefers-reduced-motion, touch targets ≥44px, search modal focus trap, emoji aria-hidden, scroll-margin-top for sticky TOC
+- ⬜ **Full WCAG audit** — color contrast (--text-muted on white ~4.0:1, footer opacity links), deeper audit pending formal review process
+- ⬜ **Delete Mt-Sinai-Hero.jpg** — image file still in repo but no longer referenced
+- ✅ **Version tag** — `v1.0-pre-compliance` tag pushed to GitHub before changes began; restore point available
+
 ## Print Template (apply to future procedure/condition pages)
 Three components, all in `styles.css` (`.print-only`, `.print-letterhead`, `.print-brand`, `@media print`):
 1. **Letterhead** — `<div class="print-only print-letterhead">` placed right after `<main>`, before `<nav class="breadcrumb">`. Logo left, name + stacked credentials right.
