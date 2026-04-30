@@ -46,6 +46,11 @@ Currently applied to: whipple-procedure.html, distal-pancreatectomy.html, total-
 - ✅ SPN added to cyst types on pancreatic-cysts.html
 - ✅ Publications section added to about.html (23 papers, 4 disease areas, PubMed links)
 - ✅ Resectability blurb added to pancreatic cancer staging section
+- ✅ pancreatic-cancer.html refactored: sections reordered, Genetics moved into Overview, all em dashes removed, background alternation fixed throughout
+- ✅ Treatment sub-pages created: systemic-therapy.html (chemo, immunotherapy, mediport, clinical trials), surgical-treatment.html (eligibility, types as tiles, approaches as tiles, recovery), radiation-therapy.html (why used, what to expect, side effects)
+- ✅ Supportive Care sub-pages created: nutrition.html (weight loss, appetite, PERT), social-work.html (social workers, coping, advance care planning, caregiver resources), palliative-care.html (what is palliative care, symptom management, spiritual care)
+- ✅ pancreatic-cancer.html Treatment and Supportive Care sections replaced with linked tile sections; TOC consolidated
+- ✅ All sub-pages have sticky back-pill linking to parent section anchor (#treatment, #supportive-care)
 
 ## Decisions
 - Design: Elevated/premium medical branding (not just the current minimal look)
@@ -117,7 +122,15 @@ robots.txt
 ## Next Steps (Priority Order)
 1. ~~**Analytics**~~ ✅ Done
 2. ~~**Expanded pancreatic cancer page**~~ ✅ Done
-3. **Expanded pages for other diagnoses** — Use pancreatic cancer page as template; shared sections (mediports, recovery, chemo) reused as blocks
+3. **Expanded pages for other diagnoses** — Use pancreatic cancer page as template. Apply to: liver-tumors.html, bile-duct-cancer.html, gallbladder-cancer.html, pancreatic-cysts.html, gastric-upper-gi.html. Each page currently has ~250–300 lines with 3–4 shallow sections. Approach per page:
+   - Add page-header with key facts strip (navy band)
+   - Add sticky TOC pill bar
+   - Expand sections with richer content (subsections, split layouts, border-left lists)
+   - Create sub-pages for major topics (surgery, systemic therapy where relevant) as linked tile sections
+   - Ensure strict background alternation (white → gray-100 → white…)
+   - Consolidate inline content into tile sections with back-links
+   - Apply no-em-dash convention throughout
+   - Priority order (suggested): liver-tumors → bile-duct-cancer → gallbladder-cancer → pancreatic-cysts → gastric-upper-gi
 4. ~~**Site search**~~ ✅ Done — Pagefind with navbar magnifying glass icon, dark overlay, section-level anchors, GitHub Action auto-rebuilds index on every push
 5. **Glossary + hover tooltips** — `/glossary.html` + CSS/JS tooltip on tagged terms site-wide; do after content is finalized
 6. ~~**Publications page**~~ ✅ Done — added as section on about.html; 23 papers across 4 disease areas, each linked to PubMed; "View full list on PubMed" links top and bottom
