@@ -6,15 +6,14 @@
 - Goals: patient education, video library, referring provider hub, SEO/LLM discoverability
 
 ## Compliance Status (Mount Sinai Website Governance Policy)
-- ⏰ **Permission** — formal approval from Digital Marketing & Branding pending; application in progress
+- ⏰ **Permission** — conditional approval received; final approval pending; site will likely be linked to official Mount Sinai faculty page soon
 - ✅ **Contact form disabled** — Formspree form removed from contact.html; replaced with phone/email instructions (PHI/HIPAA risk eliminated)
-- ✅ **Mount Sinai branding removed** — logo removed from navbar and footer on all pages; hero background image (Mt-Sinai-Hero.jpg) removed from CSS; `Mt-Sinai-Hero.jpg` still in repo (low risk, not referenced)
+- ✅ **Mount Sinai branding removed** — logo removed from navbar and footer on all pages; hero background image (Mt-Sinai-Hero.jpg) removed from CSS; `Mt-Sinai-Hero.jpg` retained in repo as historical record
 - ✅ **JSON-LD cleaned** — `worksFor: Mount Sinai Health System` and MedicalOrganization node removed from Physician schema
 - ✅ **For Providers page reframed** — "Refer a Patient" → "HPB Surgical Oncology Consultations"; portal tone → educational/informational tone
 - ✅ **Hero CTA buttons removed** — "Request an Appointment" and "Refer a Patient" buttons removed from homepage hero
 - ✅ **WCAG 2.1 AA improvements** — skip navigation links, focus-visible styles, prefers-reduced-motion, touch targets ≥44px, search modal focus trap, emoji aria-hidden, scroll-margin-top for sticky TOC
 - ⬜ **Full WCAG audit** — color contrast (--text-muted on white ~4.0:1, footer opacity links), deeper audit pending formal review process
-- ⬜ **Delete Mt-Sinai-Hero.jpg** — image file still in repo but no longer referenced
 - ✅ **Version tag** — `v1.0-pre-compliance` tag pushed to GitHub before changes began; restore point available
 
 ## Print Template (apply to future procedure/condition pages)
@@ -114,7 +113,7 @@ robots.txt
 
 ## Pending Assets
 - ⬜ Total pancreatectomy figure (no image yet — placeholder page live)
-- ⬜ Cancer locations: need 4 separate unlabeled images (resectable, borderline, unresectable, metastatic) to replace current 4-panel labeled composite
+- ✅ Cancer locations: 4 separate unlabeled images added (pdac-resectable.png, pdac-br.png, pdac-la.png, pdac-metastasis.png); replaced 4-panel composite on pancreatic-cancer.html staging section with a 2×2 responsive grid
 
 ## Pending Follow-Ups
 - ⏰ **Search Console check (after ~April 26)** — Log into [search.google.com/search-console](https://search.google.com/search-console) for correasurgery.com → Sitemaps → confirm all 20 URLs discovered and indexed. Check Coverage report for any errors.
@@ -135,12 +134,20 @@ robots.txt
 5. **Glossary + hover tooltips** — `/glossary.html` + CSS/JS tooltip on tagged terms site-wide; do after content is finalized
 6. ~~**Publications page**~~ ✅ Done — added as section on about.html; 23 papers across 4 disease areas, each linked to PubMed; "View full list on PubMed" links top and bottom
 7. **Residents page** — `/residents/index.html`, no nav link, blocked in robots.txt; decide on JS password gate vs. unlisted-only
-8. **Spanish translation** — `/es/` directory mirroring full site, `hreflang` tags, language toggle in nav; do LAST after all English content is final
-9. **Referral PDF** — Downloadable form for referring providers page (Dr. Correa to supply content)
-10. **Sitemap + robots.txt refresh** — Update as new pages are added
+8. **Private document vault** — `/vault/index.html`; password-gated page for storing PDFs (referral forms, protocols, personal docs) for easy retrieval; no nav link; blocked in robots.txt; tiny "Webmaster" link in page footer on all pages links to it; JS password gate (SHA-256 hash stored in HTML, no server needed); PDFs stored in `/vault/docs/`; page lists files with download links; security note: JS gate is obscurity-only, not cryptographically secure — sufficient for non-sensitive personal use
+9. **Spanish translation** — `/es/` directory mirroring full site, `hreflang` tags, language toggle in nav; do LAST after all English content is final
+10. **Referral PDF** — Downloadable form for referring providers page (Dr. Correa to supply content)
+11. **Sitemap + robots.txt refresh** — Update as new pages are added
 
 ### Residents page decision
 - Pending: password gate (simple JS, not cryptographically secure) vs. unlisted URL only
+
+### Private document vault design
+- Entry point: small "Webmaster" text link in the `<footer>` of every page (low visibility, no tooltip)
+- URL: `/vault/` — blocked in robots.txt (`Disallow: /vault/`)
+- Gate: JS prompt or inline password field; compares input against a hardcoded SHA-256 hash; on match, reveals the document list; no cookies/localStorage required (re-enter each visit) or optionally use sessionStorage for tab persistence
+- Document list: simple `<ul>` of `<a href="docs/filename.pdf" download>` links; Dr. Correa manually drops PDFs into `/vault/docs/` and adds links to the HTML
+- No search indexing: `<meta name="robots" content="noindex, nofollow">` on vault page
 
 ## Verification
 1. Validate JSON-LD with Google Rich Results Test on index.html and a condition page
