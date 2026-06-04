@@ -6,7 +6,8 @@
 - Goals: patient education, video library, referring provider hub, SEO/LLM discoverability
 
 ## Compliance Status (Mount Sinai Website Governance Policy)
-- ⏰ **Permission** — conditional approval received; final approval pending; site will likely be linked to official Mount Sinai faculty page soon
+- ✅ **Permission** — full approval granted (June 2026); site may be linked to official Mount Sinai faculty page
+- ⬜ **Potential restorations (deferred)** — now that full approval is granted, these items removed during compliance review could be restored: (1) Mount Sinai branding in navbar/footer, (2) `worksFor` + MedicalOrganization in JSON-LD, (3) hero CTA buttons, (4) hero background image (Mt-Sinai-Hero.jpg still in repo)
 - ✅ **Contact form disabled** — Formspree form removed from contact.html; replaced with phone/email instructions (PHI/HIPAA risk eliminated)
 - ✅ **Mount Sinai branding removed** — logo removed from navbar and footer on all pages; hero background image (Mt-Sinai-Hero.jpg) removed from CSS; `Mt-Sinai-Hero.jpg` retained in repo as historical record
 - ✅ **JSON-LD cleaned** — `worksFor: Mount Sinai Health System` and MedicalOrganization node removed from Physician schema
@@ -75,6 +76,7 @@ conditions/
   gallbladder-cancer.html
   bile-duct-cancer.html
   gastric-upper-gi.html
+  pancreatic-neuroendocrine-tumors.html
   second-opinions.html
 videos.html             ← coming soon placeholder
 for-patients.html
@@ -112,7 +114,8 @@ robots.txt
 - ✅ EUS/ERCP images: flex-wrap:wrap added — stack below text on mobile, side-by-side on desktop
 
 ## Pending Assets
-- ⬜ Total pancreatectomy figure (no image yet — placeholder page live)
+- ⬜ Total pancreatectomy figure (no image yet — placeholder page live); same style as whipple-v1 and distal-pancreatectomy-v1
+- ⬜ Microwave ablation (MWA) figure — probe in liver tumor with ablation zone; for liver-tumors.html; distinguish visually from resection
 - ✅ Cancer locations: 4 separate unlabeled images added (pdac-resectable.png, pdac-br.png, pdac-la.png, pdac-metastasis.png); replaced 4-panel composite on pancreatic-cancer.html staging section with a 2×2 responsive grid
 
 ## Pending Follow-Ups
@@ -122,6 +125,7 @@ robots.txt
 1. ~~**Analytics**~~ ✅ Done
 2. ~~**Expanded pancreatic cancer page**~~ ✅ Done
 3. **Expanded pages for other diagnoses** — Use pancreatic cancer page as template. Apply to: liver-tumors.html, bile-duct-cancer.html, gallbladder-cancer.html, pancreatic-cysts.html, gastric-upper-gi.html. Each page currently has ~250–300 lines with 3–4 shallow sections. Approach per page:
+   - **New page: Pancreatic Neuroendocrine Tumors (PNETs)** — `conditions/pancreatic-neuroendocrine-tumors.html`; cover: what PNETs are (functional vs. non-functional), grading (G1/G2/G3), symptoms, diagnosis (imaging + biomarkers such as chromogranin A, 5-HIAA), surgical vs. medical management (somatostatin analogues, PRRT, surgery for resectable disease), prognosis; link from conditions/index.html and from pancreatic-cancer.html; add to sitemap.xml
    - Add page-header with key facts strip (navy band)
    - Add sticky TOC pill bar
    - Expand sections with richer content (subsections, split layouts, border-left lists)
