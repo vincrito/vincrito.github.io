@@ -1,0 +1,277 @@
+CRLM Decision Lab - Slide Copy
+==================================================
+Edit the text below. Return this file to regenerate the slides.
+Do not change the SLIDE N lines or section headers.
+
+--- SLIDE 1 | type:title ---
+SECTION: Introduction
+TITLE: How I Think About Colorectal Liver Metastases
+SUBTITLE: A Surgical Oncologist's Approach to Decision Making
+BODY: Camilo Correa, MD - 2026
+
+--- SLIDE N | type:title ---
+SECTION: Introduction
+PILL_1: Can I remove it?
+PILL_2: Should I remove it?
+PILL_3: When should I remove it?
+
+--- SLIDE 2 | type:poll ---
+SECTION: Introduction
+TITLE: Opening Poll
+BODY: What percentage of patients with CRLM are ultimately cured after surgery?
+OPTION_1: A: Less than 10%
+OPTION_2: B: 10-20%
+OPTION_3: C: 20-40%
+OPTION_4: D: More than 40%
+
+--- SLIDE 3 | type:slide ---
+SECTION: Introduction
+TITLE: The Five Questions
+BULLET_1: 1. Can all disease be eradicated?
+BULLET_2: 2. What is the biology?
+BULLET_3: 3. What information would chemotherapy provide?
+BULLET_4: 4. What role does liver-directed therapy play?
+BULLET_5: 5. Why am I operating?
+
+--- SLIDE 4 | type:case ---
+SECTION: Case 1: The Anatomy Question
+TITLE: Case 1
+VIGNETTE: 55-year-old man. Sigmoid adenocarcinoma. CEA 12. Three liver metastases on staging CT. No obvious extrahepatic disease.
+
+--- SLIDE 5 | type:slide ---
+SECTION: Case 1: The Anatomy Question
+TITLE: Workup: What Matters?
+BULLET_1: MRI liver/Triphasic CT: identifies occult disease, clarifies segmental anatomy and proximity to major vasculature
+BULLET_2: Molecular profile: KRAS, BRAF, MSI, ctDNA
+BULLET_3: CT chest/abd/pelvis: rules out extrahepatic disease
+BULLET_4: Performance status: determines operative tolerance
+BULLET_5: Social Reserve
+
+--- SLIDE 6 | type:wrongq ---
+SECTION: Case 1: The Anatomy Question
+TITLE: Wrong Question
+
+--- SLIDE 7 | type:slide ---
+SECTION: Case 1: The Anatomy Question
+TITLE: Resectability: Then vs Now
+BULLET_1: 1995: 4 or fewer lesions, unilobar disease, no extrahepatic disease, node-negative primary #where is this 1995 coming from? we should reference this
+BULLET_2: Today: any number of lesions, bilobar disease, limited extrahepatic disease in selected patients
+BULLET_3: The criterion shifted from counting lesions to: adequate remnant + achievable margins + favorable biology
+
+
+--- SLIDE 8 | type:case ---
+SECTION: Case 2: Technical vs Oncologic Resectability
+TITLE: Case 2
+SUBTITLE: Technical vs Oncologic Resectability
+VIGNETTE: 12 bilobar metastases. No extrahepatic disease. Good performance status. CT shows clearable disease with a two-stage approach or ALPPS.
+
+--- SLIDE 9 | type:slide ---
+SECTION: Case 2: Technical vs Oncologic Resectability
+TITLE: Creating Resectability
+BULLET_1: Portal vein embolization (PVE): hypertrophy of future liver remnant
+BULLET_2: Total venous deprivation (PVE + HVE): combined portal and hepatic vein occlusion for faster hypertrophy
+BULLET_3: Two-stage hepatectomy: staged resections when one-stage remnant is insufficient
+BULLET_4: ALPPS: rapid bilobar clearance
+BULLET_5: Ablation: parenchymal-sparing option for lesions < 3cm
+
+--- SLIDE 10 | type:slide ---
+SECTION: Case 2: Technical vs Oncologic Resectability
+TITLE: Technical vs Oncologic Resectability
+BULLET_1: Technical: adequate remnant, achievable margins, patient tolerates the operation
+BULLET_2: Oncologic: biology suggests meaningful and durable benefit from resection
+BULLET_3: In 2026, most patients are technically resectable. The question should always be oncologic.
+BULLET_4: Surgical techniques solve the anatomy problem. Not the biology problem.
+
+--- SLIDE 11 | type:case ---
+SECTION: Molecular Staging
+TITLE: Case Update: Molecular Profile
+SUBTITLE: Back to Case 1
+VIGNETTE: 55-year-old man. Sigmoid adenocarcinoma. CEA 12. Three liver metastases on staging CT. No obvious extrahepatic disease.
+VIGNETTE: KRAS G12D mutation is present.
+
+--- SLIDE 12 | type:slide ---
+SECTION: Molecular Staging
+TITLE: Molecular Staging
+BULLET_1: RAS: most common; codon-specific biology matters for recurrence patterns
+BULLET_2: BRAF V600E: uncommon, aggressive biology, changes counseling significantly
+BULLET_3: MSI-H: rare in CRLM; immunotherapy-eligible, surgery still plays a role
+BULLET_4: HER2: emerging target, relevant to systemic therapy choice
+BULLET_5: ctDNA: post-operative surveillance and recurrence prediction
+
+--- SLIDE 13 | type:slide ---
+SECTION: Molecular Staging
+TITLE: KRAS: What It Means for Surgery
+BULLET_1: Worse OS after hepatectomy: roughly 10-15% difference at 5 years
+BULLET_2: More lung recurrence, especially codon 13 mutations
+BULLET_3: More margin recurrence
+BULLET_4: Does not prohibit surgery: changes counseling, surveillance intensity, and threshold for re-resection
+
+--- SLIDE 14 | type:case ---
+SECTION: Molecular Staging
+TITLE: BRAF V600E
+SUBTITLE: Technically resectable. Operate?
+VIGNETTE: Same favorable anatomy as Case 1. BRAF V600E mutation on molecular profiling. No extrahepatic disease.
+
+--- SLIDE 15 | type:slide ---
+SECTION: Molecular Staging
+TITLE: ctDNA After R0 Resection
+BODY: Post-operative ctDNA is positive after an R0 hepatectomy.
+BULLET_1: ctDNA detects recurrence 6-12 months before imaging in many patients
+BULLET_2: Positive ctDNA after R0 hepatectomy predicts recurrence with high specificity
+BULLET_3: Negative ctDNA correlates with improved disease-free survival
+BULLET_4: Not yet a decision rule - the best biology marker we have right now
+
+--- SLIDE 16 | type:slide ---
+SECTION: Molecular Staging
+TITLE: Good Biology vs Bad Biology
+SUBTITLE: Build your own framework.
+BULLET_1: Favorable: RAS WT, BRAF WT, MSI-H, ctDNA negative, response to chemotherapy, long disease-free interval, node-negative primary
+BULLET_2: Unfavorable: KRAS G12D/G12V, BRAF V600E, N2 primary, synchronous presentation, short disease-free interval, progression on chemotherapy, positive ctDNA after treatment
+
+--- SLIDE 17 | type:transition ---
+SECTION: Timing
+TITLE: Biology determines whether surgery matters.
+BODY: Once anatomy is favorable and biology does not prohibit surgery, the question is timing.
+
+--- SLIDE 18 | type:poll ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: Poll: Timing
+BODY: Resectable CRLM. Good anatomy. RAS wild-type. No extrahepatic disease. Surgery first or chemotherapy first?
+OPTION_1: Team Surgery First
+OPTION_2: Team Chemotherapy First
+
+--- SLIDE 19 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: Team Surgery First
+BULLET_1: Avoid chemotherapy hepatotoxicity: sinusoidal obstruction syndrome, oxaliplatin neuropathy
+BULLET_2: Avoid disappearing lesions: hard to find on imaging, harder to localize intraoperatively
+BULLET_3: No risk of progression converting resectable to unresectable (?)
+
+--- SLIDE 20 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: Team Chemotherapy First
+BULLET_1: Window to assess biology: progression on therapy is a stop rule before a major operation
+BULLET_2: Downstage marginally resectable disease to create a safer resection
+BULLET_3: Treat occult micrometastatic disease early
+BULLET_4: Identify the responders for whom surgery will matter most
+
+--- SLIDE 21 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: EORTC 40983
+BODY: Perioperative FOLFOX vs surgery alone in resectable CRLM.
+BULLET_1: PFS improved: ~36% vs 28% at 3 years (HR ~0.77)
+BULLET_2: OS: no statistically significant difference at long-term follow-up
+BULLET_3: Surgical complication rate higher in the perioperative chemotherapy arm
+
+--- SLIDE 22 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: JCOG0603
+BODY: Hepatectomy + adjuvant mFOLFOX6 vs hepatectomy alone.
+BULLET_1: DFS improved: 49.8 vs 24.9 months (HR 0.56)
+BULLET_2: OS: not significantly improved
+
+--- SLIDE 23 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: New EPOC
+BODY: Perioperative chemotherapy with or without cetuximab in RAS WT resectable CRLM.
+BULLET_1: OS: 55 months with cetuximab vs 81 months without - a meaningful harm
+BULLET_2: Cetuximab improves response in unresectable disease; worsens outcomes in resectable disease
+BULLET_3: Do not extrapolate across disease stages / treatment settings
+
+--- SLIDE 24 | type:slide ---
+SECTION: Timing: Surgery vs Chemotherapy
+TITLE: My Timing Algorithm
+BULLET_1: Surgery first: clearly resectable, low-risk biology, concern for disappearing lesions
+BULLET_2: Chemotherapy first: biology uncertain, marginal resectability, high tumor burden, need to test response
+BULLET_3: Either: clearly resectable, no concern for disappearing lesions, RAS WT with straightforward anatomy and low biology risk
+BULLET_4: Progression on therapy while technically resectable should prompt reconsideration of surgical plan
+
+--- SLIDE 25 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Local Therapy Goals
+SUBTITLE: Match the modality to the goal.
+BULLET_1: Curative intent: resection when anatomy and biology allow
+BULLET_2: Conversion: chemotherapy with or without HAI to downstage, then reassess
+BULLET_3: Liver control: ablation, HAI, or both for liver-dominant disease
+BULLET_4: Parenchymal sparing: ablation for small peripheral lesions in patients with limited remnant
+BULLET_5: Poor PS: ablation, radiation therapy, Y90 if poor surgical tolerance anticipated
+
+--- SLIDE 26 | type:case ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Case: Ablation vs Resection
+VIGNETTE: 3 peripheral lesions, all 2 cm or less, in a patient with prior right hepatectomy. Limited future liver remnant. Good performance status.
+
+--- SLIDE 27 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: COLLISION Trial
+BODY: Randomized trial of thermal ablation vs surgical resection for CRLM up to 3 cm.
+BULLET_1: OS: non-inferior for ablation in size-matched lesions
+BULLET_2: Local recurrence higher with ablation, but salvageable in most cases
+BULLET_3: Does not mean ablation equals resection for all CRLM: it means ablation is reasonable for small peripheral lesions where remnant is the constraint
+
+--- SLIDE 28 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Why HAI Chemotherapy?
+BODY: The liver is the dominant site of failure in CRLM. HAI delivers floxuridine (FUDR) at concentrations 10-400x higher than IV administration, via the hepatic artery, with lower systemic toxicity.
+BULLET_1: First-pass extraction: high local drug concentration, lower systemic exposure
+BULLET_2: Always combined with systemic therapy
+BULLET_3: Most useful in liver-dominant disease where liver control is the limiting factor for survival
+
+--- SLIDE 29 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: HAI Data
+BULLET_1: CALGB 9481 (RCT): response rate 47% vs 24% (p<0.001); median OS 24.4 vs 20.0 months
+BULLET_2: Groot Koerkamp 2017 (n=2,368, propensity matched): median OS 67 vs 44 months; 10-year OS 38% vs 24%
+BULLET_3: Effect persisted in the era of modern systemic chemotherapy
+BULLET_4: Strongest benefit in low clinical risk score and node-negative primary
+
+--- SLIDE 30 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Conversion with HAI: The Selection Question
+BODY: D'Angelica, Correa-Gallego et al. Ann Surg 2015
+BULLET 1: Median OS and PFS: 38 and 13 months 
+BULLET_2: 47% conversion rate / 3-year OS 80% vs 26% in resected vs non-resected patients
+BULLET_3: We do not know those patients did well because of the surgery
+BULLET_4: Surgery may be a marker of favorable biology, not the cause of survival
+
+--- SLIDE 31 | type:trial ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Ongoing HAI Trials
+
+--- SLIDE 32 | type:slide ---
+SECTION: Local Therapy: Ablation and HAI
+TITLE: Who I consider for HAI
+BULLET_1: Liver-only or liver-dominant disease without evidence of systemic progression
+BULLET_2: High-risk resected disease: multiple lesions, KRAS-mutant, high tumor burden
+BULLET_3: Conversion candidates: unresectable disease, good performance status, response to systemic therapy
+BULLET_4: Why is not every center doing this? Pump placement expertise, medical oncology expertise, and infrastructure all limit access.
+
+--- SLIDE 33 | type:case ---
+SECTION: The Hardest Question
+TITLE: Case 3
+VIGNETTE: BRAF V600E. Progression on two lines of systemic chemotherapy. Technically resectable on current imaging.
+
+--- SLIDE 34 | type:transition ---
+SECTION: The Hardest Question
+TITLE: Does surgery add any meaningful benefit? 
+BODY: Am I helping the patient, or treating the scan? 
+BODY: Technical resectability and oncologic benefit are not the same thing.
+
+--- SLIDE 35 | type:slide ---
+SECTION: Synthesis
+TITLE: The Five Questions
+BULLET_1: 1. Can all disease be eradicated? - anatomy, remnant, technical feasibility
+BULLET_2: 2. What is the biology? - molecular profile, ctDNA, response to treatment
+BULLET_3: 3. What information would chemotherapy provide? - test biology, downstage, identify responders
+BULLET_4: 4. What role does liver-directed therapy play? - ablation, HAI, staged resections
+BULLET_5: 5. Why am I operating? - true benefit, or treating the scan?
+
+--- SLIDE 36 | type:case ---
+SECTION: Synthesis
+TITLE: Return to Case 1
+SUBTITLE: Now you have the framework. Answer all five questions.
+VIGNETTE: 55-year-old man. Sigmoid adenocarcinoma. RAS wild-type. ctDNA negative after neoadjuvant chemotherapy. No extrahepatic disease. Three resectable liver metastases.
+
+--- SLIDE 37 | type:closing ---
+SECTION: Synthesis
+TITLE: The Standard of Care Is Judgment

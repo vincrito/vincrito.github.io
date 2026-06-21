@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRLM Decision Lab | Camilo Correa, MD</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#0f2340;--blue:#1a5fa8;--blue-light:#2474c8;--blue-pale:#e8f1fb;--gold:#c8973a;--gray-100:#f5f7fa;--gray-200:#e2e6ed;--gray-400:#9aa3b0;--text:#1c2230;--text-muted:#5a6373;--green:#0d7a4e;--green-pale:#e6f5ef;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--gray-100);color:var(--text);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;}
+.topbar{height:48px;flex-shrink:0;background:var(--navy);display:flex;align-items:center;padding:0 18px;gap:12px;}
+.topbar-logo{height:19px;width:auto;opacity:.82;}
+.topbar-div{width:1px;height:18px;background:rgba(255,255,255,.18);}
+.topbar-brand{font-size:11px;font-weight:500;color:rgba(255,255,255,.45);}
+.topbar-title{flex:1;text-align:center;font-size:13px;font-weight:600;color:rgba(255,255,255,.82);}
+.refs-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:4px 12px;font-size:11px;font-weight:600;color:rgba(255,255,255,.65);cursor:pointer;font-family:inherit;}
+.refs-btn:hover{background:rgba(255,255,255,.18);}
+.pbar{height:3px;flex-shrink:0;background:var(--gray-200);}
+.pbar-fill{height:100%;background:linear-gradient(90deg,var(--blue),#34d399);transition:width .3s;}
+.stage{flex:1 1 0;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 12px;overflow:hidden;}
+.card{width:100%;max-width:1400px;height:100%;background:#fff;border:1px solid var(--gray-200);border-radius:14px;box-shadow:0 2px 14px rgba(15,35,64,.07);padding:clamp(22px,3.5vh,52px) clamp(32px,4vw,72px) clamp(14px,2vh,28px);position:relative;display:flex;flex-direction:column;overflow:hidden;}
+.card-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(8px,1.2vh,16px);flex-shrink:0;}
+.card-section{font-size:clamp(10px,1.1vw,13px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);}
+.card-num{font-size:11px;color:var(--gray-400);font-variant-numeric:tabular-nums;}
+.card h2{font-size:clamp(2.3rem,4vw,3.6rem);font-weight:700;color:var(--navy);line-height:1.14;flex-shrink:0;}
+.card-sub{font-size:clamp(1.15rem,1.9vw,1.6rem);color:var(--text-muted);margin-top:5px;flex-shrink:0;}
+.card h2:empty{display:none;margin:0;}
+.card h2:empty{display:none;margin:0;}
+.card h2:empty ~ .card-body{font-size:clamp(1.6rem,2.8vw,2.5rem);color:var(--navy);text-align:center;margin-top:auto;margin-bottom:auto;line-height:1.65;}
+.card-body{font-size:clamp(1.25rem,2vw,1.9rem);color:var(--text-muted);line-height:1.72;margin-top:14px;}
+.bullets{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:clamp(9px,1.4vh,20px);}
+.bullets li{display:flex;align-items:flex-start;gap:10px;font-size:clamp(1.25rem,2vw,1.9rem);color:var(--text);line-height:1.6;}
+.bullets li::before{content:'';flex-shrink:0;width:clamp(5px,0.5vw,8px);height:clamp(5px,0.5vw,8px);border-radius:50%;background:var(--blue);margin-top:clamp(9px,1vw,14px);}
+.vignette{background:var(--blue-pale);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:clamp(12px,1.8vh,22px) clamp(14px,2vw,26px);margin-top:14px;font-size:clamp(1.25rem,2vw,1.9rem);color:var(--navy);line-height:1.68;flex-shrink:0;}
+.poll-opts{display:grid;gap:8px;margin-top:16px;}
+.poll-opt{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:10px;padding:clamp(10px,1.5vh,18px) clamp(14px,2vw,24px);font-size:clamp(1.25rem,2vw,1.9rem);color:var(--text);}
+.card.type-title{background:linear-gradient(135deg,var(--navy) 0%,#1a3a6c 100%);border-color:transparent;align-items:center;justify-content:center;text-align:center;}
+.card.type-title .card-section{color:rgba(255,255,255,.35);}
+.card.type-title h2{color:#fff;font-size:clamp(2.5rem,5.5vw,4.6rem);margin-top:clamp(16px,3vh,40px);}
+.card.type-title .card-sub{color:rgba(255,255,255,.6);font-size:clamp(1.25rem,2vw,1.9rem);margin-top:clamp(10px,1.8vh,24px);}
+.title-qs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:clamp(36px,6vh,72px);}
+.title-q{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:clamp(7px,1vh,12px) clamp(14px,2vw,24px);font-size:clamp(1.05rem,1.6vw,1.4rem);color:rgba(255,255,255,.82);}
+.card.type-transition{background:var(--navy);border-color:transparent;align-items:center;justify-content:center;text-align:center;}
+.card.type-transition h2{color:#fff;font-size:clamp(2rem,4.5vw,3.6rem);font-style:italic;font-weight:500;}
+.card.type-transition .card-body{color:rgba(255,255,255,.5);font-size:clamp(1.15rem,1.9vw,1.6rem);}
+.card.type-closing{background:linear-gradient(135deg,#0d1f38 0%,#0f2340 100%);border-color:transparent;align-items:center;justify-content:center;text-align:center;}
+.card.type-closing h2{color:#fff;font-size:clamp(2.3rem,4.5vw,3.6rem);}
+.card.type-closing .closing-body{color:rgba(255,255,255,.65);font-size:clamp(1.1rem,1.8vw,1.6rem);max-width:860px;margin:18px auto 0;line-height:1.75;}
+.card.type-closing .closing-rule{width:48px;height:2px;background:var(--gold);margin:22px auto 0;border-radius:2px;}
+.wq-cross{font-size:clamp(1.3rem,2.2vw,1.9rem);color:var(--gray-400);margin-top:14px;text-decoration:line-through;text-decoration-color:#f87171;}
+.wq-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--green);margin-top:22px;margin-bottom:6px;}
+.wq-right{font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:700;color:var(--navy);line-height:1.38;}
+.wq-note{font-size:.9rem;color:var(--text-muted);margin-top:14px;}
+.trial-row{display:flex;align-items:flex-start;gap:20px;margin-top:14px;flex:1;min-height:0;}
+.trial-row img{max-height:clamp(180px,28vh,340px);max-width:44%;object-fit:contain;border:1px solid var(--gray-200);border-radius:8px;flex-shrink:0;}
+.trial-text{flex:1;}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:12px;flex-shrink:0;}
+.chip{background:var(--green-pale);border:1px solid #b8e8d3;border-radius:100px;padding:4px 13px;font-size:11px;color:var(--green);cursor:pointer;font-weight:600;font-family:inherit;transition:background .12s;}
+.chip:hover{background:#c9f0e0;}
+.bnav{height:52px;flex-shrink:0;background:#fff;border-top:1px solid var(--gray-200);padding:0 20px;display:flex;align-items:center;justify-content:space-between;}
+.nbtn{background:none;border:1px solid var(--gray-200);border-radius:8px;padding:7px 22px;font-size:13px;font-weight:500;color:var(--navy);cursor:pointer;font-family:inherit;transition:background .12s;}
+.nbtn:hover:not(:disabled){background:var(--gray-100);}
+.nbtn:disabled{opacity:.28;cursor:not-allowed;}
+.nbtn-p{background:var(--blue);border-color:var(--blue);color:#fff;}
+.nbtn-p:hover:not(:disabled){background:var(--blue-light);}
+.nav-c{text-align:center;}
+.nav-sn{font-size:14px;font-weight:600;color:var(--navy);}
+.nav-kb{font-size:10px;color:var(--gray-400);margin-top:1px;}
+.refs-ov{position:fixed;inset:0;z-index:300;background:rgba(15,35,64,.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:28px 20px;overflow-y:auto;}
+.refs-ov.open{display:flex;}
+.refs-panel{background:#fff;width:100%;max-width:960px;border-radius:16px;box-shadow:0 20px 40px rgba(15,35,64,.2);}
+.refs-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--gray-200);}
+.refs-hd h3{font-size:1.05rem;color:var(--navy);}
+.refs-cl{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:6px;padding:5px 14px;font-size:12px;color:var(--text-muted);cursor:pointer;font-family:inherit;}
+.refs-grid{display:flex;flex-direction:column;padding:8px 22px 20px;}
+.ref-card{background:none;border:none;border-bottom:1px solid var(--gray-200);padding:12px 0;cursor:pointer;text-align:left;width:100%;font-family:inherit;display:flex;align-items:baseline;gap:16px;transition:background .1s;}
+.ref-card:last-child{border-bottom:none;}
+.ref-card:hover{background:var(--blue-pale);padding-left:8px;padding-right:8px;border-radius:6px;}
+.ref-yr{font-size:11px;font-weight:700;color:var(--gray-400);flex-shrink:0;width:36px;}
+.ref-body{flex:1;}
+.ref-card h4{font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:2px;}
+.ref-card p{font-size:.78rem;color:var(--text-muted);line-height:1.45;}
+.ref-pm{font-size:.75rem;color:var(--blue);margin-top:3px;font-weight:600;}
+.modal-ov{position:fixed;inset:0;z-index:500;background:rgba(15,35,64,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-ov.open{display:flex;}
+.modal-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;width:100%;max-width:min(90vw,900px);max-height:90vh;overflow-y:auto;box-shadow:0 20px 40px rgba(15,35,64,.18);}
+.modal-hd{border-bottom:1px solid var(--gray-200);padding:clamp(14px,2vh,24px) clamp(16px,2vw,28px);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.m-yr{font-size:clamp(11px,1.1vw,14px);font-weight:700;color:var(--gray-400);margin-bottom:3px;}
+.m-tt{font-size:clamp(1.05rem,1.5vw,1.35rem);font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:3px;}
+.m-ct{font-size:clamp(.82rem,1.1vw,1rem);color:var(--text-muted);}
+.m-cl{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:6px;padding:5px 14px;font-size:clamp(12px,1.1vw,14px);color:var(--text-muted);cursor:pointer;flex-shrink:0;font-family:inherit;}
+.modal-body{padding:clamp(14px,2vh,22px) clamp(16px,2vw,28px);}
+.m-sec{margin-bottom:clamp(12px,1.6vh,20px);}
+.m-lbl{font-size:clamp(10px,1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gray-400);margin-bottom:5px;}
+.modal-body p{font-size:clamp(.95rem,1.35vw,1.2rem);color:var(--text-muted);line-height:1.68;}
+.m-tw{color:var(--text)!important;font-weight:500;}
+.m-kr{color:var(--navy)!important;font-weight:600;background:var(--blue-pale);border-radius:8px;padding:10px 14px;}
+.pico{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pico-item{background:var(--gray-100);border-radius:8px;padding:clamp(8px,1vh,13px) clamp(10px,1.2vw,16px);}
+.pico-l{font-size:clamp(10px,1vw,12px);font-weight:700;color:var(--blue);letter-spacing:.06em;margin-bottom:3px;}
+.pico-item p{font-size:clamp(.88rem,1.15vw,1.05rem);color:var(--text-muted);line-height:1.5;}
+.m-acts{display:flex;gap:8px;flex-wrap:wrap;padding-top:4px;margin-top:12px;}
+.btn-pm{background:var(--green-pale);border:1px solid #b8e8d3;border-radius:8px;padding:8px 18px;font-size:clamp(13px,1.2vw,15px);color:var(--green);text-decoration:none;font-weight:600;}
+.btn-pm:hover{background:#c9f0e0;text-decoration:none;}
+.btn-bk{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:8px;padding:8px 18px;font-size:clamp(13px,1.2vw,15px);color:var(--text-muted);cursor:pointer;font-family:inherit;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">Camilo Correa</span>
+  <span class="topbar-title">Approach to CRLM</span>
+  <button class="refs-btn" id="refsBtn">References</button>
+</div>
+<div class="pbar"><div class="pbar-fill" id="pFill" style="width:0%"></div></div>
+<div class="stage"><div id="slide"></div></div>
+<div class="bnav">
+  <button class="nbtn" id="prevBtn" disabled>Back</button>
+  <div class="nav-c">
+    <div class="nav-sn" id="slideNum">1 / 37</div>
+    <div class="nav-kb">arrow keys to navigate</div>
+  </div>
+  <button class="nbtn nbtn-p" id="nextBtn">Next</button>
+</div>
+<div id="refsOv" class="refs-ov">
+  <div class="refs-panel">
+    <div class="refs-hd"><h3>Reference Library</h3><button class="refs-cl" id="refsClose">Close</button></div>
+    <div class="refs-grid" id="refsGrid"></div>
+  </div>
+</div>
+<div id="modalOv" class="modal-ov">
+  <div class="modal-card">
+    <div class="modal-hd">
+      <div><div class="m-yr" id="mYr"></div><div class="m-tt" id="mTt"></div><div class="m-ct" id="mCt"></div></div>
+      <button class="m-cl" id="mCl1">Close</button>
+    </div>
+    <div class="modal-body">
+      <div class="m-sec"><div class="m-lbl">Question the paper answers</div><p id="mQ"></p></div>
+      <div class="m-sec">
+        <div class="m-lbl">PICO</div>
+        <div class="pico">
+          <div class="pico-item"><div class="pico-l">P - Population</div><p id="mP"></p></div>
+          <div class="pico-item"><div class="pico-l">I - Intervention</div><p id="mI"></p></div>
+          <div class="pico-item"><div class="pico-l">C - Comparator</div><p id="mC"></p></div>
+          <div class="pico-item"><div class="pico-l">O - Outcome</div><p id="mO"></p></div>
+        </div>
+      </div>
+      <div class="m-sec"><div class="m-lbl">Key Results</div><p class="m-kr" id="mKr"></p></div>
+      <div class="m-sec"><div class="m-lbl">How I use it</div><p class="m-tw" id="mTw"></p></div>
+      <div class="m-acts"><a id="mPm" href="#" target="_blank" rel="noreferrer" class="btn-pm">Open PubMed</a><button class="btn-bk" id="mCl2">Back to slides</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+(function(){
+
+var S={
+"tomlinson-2007":{t:"Actual 10-year survival after resection of colorectal liver metastases defines cure",c:"Tomlinson JS et al. J Clin Oncol. 2007;25(29):4575-4580.",y:2007,q:"Can surgery actually cure some patients with CRLM?",p:"Patients who underwent complete resection of CRLM at a single institution (n=612)",i:"Hepatic resection with curative intent",co:"N/A - retrospective cohort defining 10-year cure thresholds",o:"10-year disease-free survival as a proxy for cure",kr:"10-year DFS 22.3%. Estimated cure fraction ~17% (plateau of survival curve). Patients disease-free at 5 years had 86% 10-year OS. Median OS 35 months overall.",tw:"Roughly 20% of resected patients are disease-free at 10 years. This number is the justification for aggressive surgical approach in CRLM.",u:"https://pubmed.ncbi.nlm.nih.gov/17925551/"},
+"fong-1999":{t:"Clinical score for predicting recurrence after hepatic resection for metastatic colorectal cancer",c:"Fong Y et al. Ann Surg. 1999;230(3):309-318.",y:1999,q:"How do we quantify recurrence risk before molecular profiling?",p:"Patients undergoing hepatic resection for CRC metastases (n=1,001)",i:"Clinical risk score based on 5 preoperative factors",co:"N/A - prognostic tool development",o:"Recurrence-free and overall survival stratified by score",kr:"5 factors (1 point each): node+ primary, DFI <12 mo, >1 metastasis, CEA >200, size >5 cm. Score 0-2: 5-yr OS ~60%, median OS 74 mo. Score 3-5: 5-yr OS ~14%, median OS 22 mo.",tw:"The classic 5-factor clinical risk score. One of the earliest tools to formalize biology-aware surgical selection, before molecular data existed.",u:"https://pubmed.ncbi.nlm.nih.gov/10493478/"},
+"adam-2004":{t:"Rescue surgery for unresectable colorectal liver metastases downstaged by chemotherapy",c:"Adam R et al. Ann Surg. 2004;240(4):644-657.",y:2004,q:"Can chemotherapy create resectability?",p:"Patients with initially unresectable CRLM treated at Paul Brousse",i:"Downsizing chemotherapy followed by surgical reassessment",co:"Patients who remained unresectable after chemotherapy",o:"Conversion to resectability rate; long-term overall survival",kr:"12.5% conversion rate in patients with initially unresectable disease. 5-yr OS after rescue resection ~33%. Median survival 35 months (resected) vs 16 months (non-resected, p<0.001).",tw:"Downstaging converts unresectable disease into long-term survivors in selected patients. The conceptual basis for chemotherapy-first in borderline disease.",u:"https://pubmed.ncbi.nlm.nih.gov/15383792/"},
+"eortc-2008":{t:"Perioperative chemotherapy with FOLFOX4 and surgery versus surgery alone for resectable CRLM (EORTC 40983)",c:"Nordlinger B et al. Lancet. 2008;371(9617):1007-1016.",y:2008,q:"Does perioperative chemotherapy help in resectable CRLM?",p:"Patients with resectable CRLM, up to 4 lesions (n=364)",i:"Perioperative FOLFOX4 (3 cycles pre + 3 post) + surgery",co:"Surgery alone",o:"Progression-free survival (primary); overall survival",kr:"3-yr PFS 36.2% (periop chemo) vs 28.1% (surgery alone), HR 0.77 (p=0.041). Long-term OS 61.3% vs 57.6%, HR 0.88 (p=0.34, NS). Surgical complications higher in chemo arm (25% vs 16%).",tw:"PFS improved. OS was not significantly improved at long-term follow-up. Useful for selection and recurrence delay - not a mandate for all patients.",u:"https://pubmed.ncbi.nlm.nih.gov/18358928/"},
+"eortc-2013":{t:"EORTC 40983: long-term overall survival results",c:"Nordlinger B et al. Lancet Oncol. 2013;14(12):1208-1215.",y:2013,q:"Did the PFS signal translate into an OS benefit?",p:"Same cohort as EORTC 40983 (2008), long-term follow-up",i:"Perioperative FOLFOX4 + surgery",co:"Surgery alone",o:"Overall survival at long-term follow-up",kr:"5-yr OS 51.2% (periop chemo) vs 47.8% (surgery alone), HR 0.88 (95% CI 0.68-1.14, p=0.34). OS benefit not demonstrated at long-term follow-up.",tw:"Long-term OS remained non-significant. Reinforces careful patient selection rather than automatic perioperative chemotherapy for all resectable patients.",u:"https://pubmed.ncbi.nlm.nih.gov/24120480/"},
+"jcog0603":{t:"Hepatectomy followed by mFOLFOX6 versus hepatectomy alone for liver-only metastatic CRC (JCOG0603)",c:"Kanemitsu Y et al. J Clin Oncol. 2021;39(34):3789-3799.",y:2021,q:"Does adjuvant chemotherapy after hepatectomy improve outcomes?",p:"Patients after complete resection of liver-only CRC metastases (n=300)",i:"Hepatectomy + 12 cycles adjuvant mFOLFOX6",co:"Hepatectomy alone",o:"Disease-free survival (primary); overall survival",kr:"Median DFS 49.8 vs 24.9 months, HR 0.56 (95% CI 0.39-0.81, p<0.001). 5-yr OS 83.1% vs 71.2%, HR 0.67 (95% CI 0.45-1.01, p=0.073, NS).",tw:"DFS improved markedly (49.8 vs 24.9 months, HR 0.56). OS did not clearly improve. A clear illustration of the DFS-vs-OS debate in surgical oncology.",u:"https://pubmed.ncbi.nlm.nih.gov/34520230/"},
+"new-epoc-2014":{t:"Systemic chemotherapy with or without cetuximab in patients with resectable colorectal liver metastasis: the New EPOC randomised controlled trial (initial report)",c:"Primrose J et al. Lancet Oncol. 2014;15(6):601-611.",y:2014,q:"Does adding cetuximab to perioperative chemotherapy improve outcomes in KRAS WT resectable CRLM?",p:"Patients with KRAS exon 2 WT resectable or suboptimally resectable CRLM (n=257 analysed)",i:"Perioperative chemotherapy + cetuximab",co:"Perioperative chemotherapy alone",o:"Progression-free survival (primary); trial closed early at interim analysis for futility",kr:"Median PFS 14.1 months (cetuximab) vs 20.5 months (no cetuximab), HR 1.48 (95% CI 1.04-2.12, p=0.030). Trial stopped early - cetuximab arm worse on the primary endpoint. This is the initial publication that triggered early closure.",tw:"The first signal that cetuximab harms in the resectable setting. The 2020 Bridgewater long-term follow-up confirmed OS harm (55 vs 81 months). Together these papers define the resectability boundary as a treatment-effect modifier for anti-EGFR therapy.",u:"https://pubmed.ncbi.nlm.nih.gov/24717919/"},
+"new-epoc":{t:"Systemic chemotherapy with or without cetuximab in resectable CRLM (New EPOC)",c:"Bridgewater JA et al. Lancet Oncol. 2020;21(4):e1-e10.",y:2020,q:"Should cetuximab be added perioperatively in RAS WT resectable CRLM?",p:"Patients with resectable RAS WT CRLM (n=272)",i:"Perioperative chemotherapy + cetuximab",co:"Perioperative chemotherapy alone",o:"Overall survival; progression-free survival",kr:"Median OS 55.4 months (cetuximab) vs 81.0 months (no cetuximab), HR 1.45 (p=0.036). Median PFS 15.5 vs 22.2 months, HR 1.48 (p=0.003). Both endpoints significantly worse with cetuximab.",tw:"Cetuximab worsened OS: 55 vs 81 months. A cautionary tale: benefit in unresectable disease does not predict benefit in the resectable setting.",u:"https://pubmed.ncbi.nlm.nih.gov/32014119/"},
+"kras-2015":{t:"Effect of KRAS mutation on long-term outcomes after hepatic resection for CRLM",c:"Margonis GA et al. J Clin Oncol. 2015;33(21):2367-2374.",y:2015,q:"How does KRAS change surgical thinking?",p:"Patients undergoing hepatic resection for CRLM with known KRAS status (n=1,007, multi-institutional)",i:"KRAS mutation (any codon)",co:"KRAS wild-type",o:"Overall survival, recurrence-free survival, recurrence patterns",kr:"5-yr OS: KRAS mutant 38.2% vs WT 53.3% (p<0.001). 5-yr RFS: 19.3% vs 33.2% (p<0.001). Lung recurrence: 37% (mutant) vs 22% (WT, p<0.001). Extrahepatic recurrence significantly higher in KRAS mutant.",tw:"KRAS mutation is associated with worse survival and more extrahepatic/lung recurrence after hepatectomy. Changes counseling and surveillance - does not prohibit surgery.",u:"https://pubmed.ncbi.nlm.nih.gov/26077912/"},
+"kras-2016":{t:"Codon 13 KRAS mutation predicts patterns of recurrence after hepatectomy for CRLM",c:"Margonis GA et al. Cancer. 2016;122(17):2698-2707.",y:2016,q:"Is all KRAS the same?",p:"Patients with resected CRLM and known KRAS codon status (n=681)",i:"KRAS codon 13 mutation specifically",co:"KRAS codon 12 mutations and KRAS WT",o:"Hepatic, extrahepatic, and pulmonary recurrence patterns",kr:"Pulmonary recurrence: codon 13 52% vs codon 12 32% (p=0.02). Codon 13 independently associated with worse RFS (HR 1.68, p=0.02). No significant difference in hepatic-only recurrence between codon 12 and 13.",tw:"Codon-specific KRAS biology matters. Codon 13 correlates with worse extrahepatic and lung recurrence - relevant to surveillance planning.",u:"https://pubmed.ncbi.nlm.nih.gov/27244540/"},
+"braf-2013":{t:"Incidence and prognostic impact of KRAS and BRAF mutation in patients undergoing liver surgery for colorectal metastases",c:"Karagkounis G et al. Cancer. 2013;119(23):4137-4144.",y:2013,q:"What does BRAF V600E do to your enthusiasm for surgery?",p:"Patients undergoing liver resection for CRLM with molecular profiling (n=378)",i:"BRAF V600E or KRAS mutation",co:"Wild-type BRAF and KRAS",o:"Disease-specific survival, recurrence-free survival",kr:"BRAF V600E prevalence 7.4%. Median DSS 24.9 mo (BRAF mut) vs 64.1 mo (WT). 5-yr DSS 24% vs 55% (p<0.001). BRAF mutation independently associated with worse DSS on multivariable analysis.",tw:"BRAF mutation is uncommon (~5-8% of CRLM) but signals aggressive biology and worse outcomes after resection.",u:"https://pubmed.ncbi.nlm.nih.gov/24104864/"},
+"braf-2019":{t:"BRAF mutation is not associated with an increased risk of recurrence after CRLM resection",c:"Bachet J-B et al. Br J Surg. 2019;106(9):1237-1247.",y:2019,q:"Is BRAF V600E an absolute contraindication to surgery?",p:"Patients with BRAF-mutated CRLM who underwent resection (multi-institutional)",i:"BRAF V600E mutation",co:"BRAF wild-type patients after resection",o:"Recurrence rate, overall survival, recurrence-free survival",kr:"No statistically significant difference in recurrence or OS by BRAF status after R0 resection in this multi-institutional cohort (n=52 BRAF mut). Caveat: small BRAF-mutant sample and retrospective design limit conclusions.",tw:"Not necessarily. BRAF should change expectations and counseling - not automatically forbid resection in selected patients.",u:"https://pubmed.ncbi.nlm.nih.gov/31183866/"},
+"ctdna-2021":{t:"Circulating tumour DNA analysis for improved recurrence surveillance after CRLM resection",c:"Reinert T et al. Gut. 2021;70(12):2294-2301.",y:2021,q:"Does ctDNA predict recurrence earlier than imaging?",p:"Patients after curative resection of CRLM with ctDNA monitoring",i:"Postoperative tumor-informed ctDNA surveillance",co:"Standard imaging-based surveillance",o:"Lead time to recurrence detection; prognostic accuracy",kr:"ctDNA-positive post-resection: 3-yr RFS 0% vs 44% ctDNA-negative (HR 10.0, p<0.001). Lead time advantage 6.1 months before imaging detection of recurrence. Sensitivity 91%, specificity 88%.",tw:"ctDNA detects recurrence 6-12 months before imaging in many patients and outperforms standard clinical risk factors as a prognostic tool.",u:"https://pubmed.ncbi.nlm.nih.gov/33262152/"},
+"ctdna-2024":{t:"Personalized circulating tumor DNA monitoring improves recurrence surveillance after curative resection of CRLM",c:"Li Y et al. Int J Surg. 2024.",y:2024,q:"Can ctDNA change surveillance and salvage strategy?",p:"Patients after curative resection of CRLM (prospective cohort)",i:"Personalized ctDNA monitoring protocol",co:"Conventional surveillance (imaging + CEA)",o:"Recurrence detection sensitivity and specificity; impact on salvage therapy",kr:"ctDNA sensitivity 82%, specificity 94% for recurrence detection. PPV 91%. Median lead time 5.5 months before clinical recurrence. ctDNA-guided strategy changed clinical management in 38% of cases.",tw:"Prospective data support ctDNA for early recurrence detection and may guide decisions about repeat local therapy.",u:"https://pubmed.ncbi.nlm.nih.gov/38445460/"},
+"ligro-2024":{t:"Long-term follow-up from the randomized LIGRO trial (ALPPS vs two-stage hepatectomy)",c:"Sandstrom P et al. Ann Surg. 2024.",y:2024,q:"Can ALPPS create resectability with meaningful long-term outcomes?",p:"Patients with bilobar CRLM requiring staged resection (LIGRO RCT)",i:"ALPPS (associating liver partition and portal vein ligation for staged hepatectomy)",co:"Two-stage hepatectomy with portal vein occlusion",o:"Resectability rate (primary); overall survival at long-term follow-up",kr:"Resectability rate 92% (ALPPS) vs 57% (TSH), p<0.001. 5-yr OS comparable (31% vs 29%, NS). 90-day major morbidity higher with ALPPS (43% vs 26%). Median OS not significantly different.",tw:"ALPPS achieves faster hypertrophy and higher R0 resection rates than two-stage hepatectomy, with comparable long-term outcomes in selected patients.",u:"https://pubmed.ncbi.nlm.nih.gov/39310365/"},
+"collision-2025":{t:"Thermal ablation versus surgical resection of small-size CRLM (COLLISION trial)",c:"COLLISION Trial Group. Lancet Oncol. 2025.",y:2025,q:"Is resection always superior for small resectable lesions?",p:"Patients with resectable CRLM up to 3 cm (randomized, multi-center)",i:"Thermal ablation (microwave or radiofrequency)",co:"Surgical resection",o:"Overall survival (non-inferiority primary); local recurrence rate",kr:"3-yr OS 80.6% (ablation) vs 80.0% (resection), non-inferiority margin 10% met. Local recurrence 11.5% (ablation) vs 4.0% (resection, p<0.001). No significant difference in distant recurrence or DFS.",tw:"For lesions up to 3 cm, thermal ablation is non-inferior to resection for OS. Supports parenchymal-sparing ablation for small peripheral lesions in selected patients.",u:"https://pubmed.ncbi.nlm.nih.gov/39848272/"},
+"calgb-9481":{t:"Hepatic arterial infusion versus systemic therapy for hepatic metastases from colorectal cancer (CALGB 9481)",c:"Kemeny NE et al. J Clin Oncol. 2006;24(9):1395-1403.",y:2006,q:"Does HAI improve outcomes over systemic therapy alone?",p:"Patients with unresectable hepatic metastases from CRC (n=135)",i:"Hepatic arterial infusion chemotherapy (FUDR via implanted pump)",co:"Systemic chemotherapy (FUDR or 5-FU)",o:"Response rate (primary); overall survival",kr:"Response rate 47% (HAI) vs 24% (systemic, p<0.001). Median OS 24.4 vs 20.0 months (p=0.003). Conversion to resectability 16% vs 4% (p=0.048). 2-yr OS 45% vs 32%.",tw:"Response rate 47% vs 24% (p<0.001); median OS 24.4 vs 20.0 months. One of the few randomized HAI trials showing improved response and conversion in liver-dominant disease.",u:"https://pubmed.ncbi.nlm.nih.gov/16505413/"},
+"koerkamp-2017":{t:"Perioperative HAI pump chemotherapy is associated with longer survival after resection of colorectal liver metastases: a propensity score analysis",c:"Groot Koerkamp B et al. J Clin Oncol. 2017;35(17):1938-1944.",y:2017,q:"Does perioperative HAI improve OS after complete resection of CRLM?",p:"Patients with complete resection of CRLM, 1992-2012, single institution (n=2,368)",i:"Perioperative HAI + systemic chemotherapy (n=785)",co:"Systemic chemotherapy only (n=1,583); propensity score matched",o:"Overall survival; 10-year OS; subgroup by clinical risk score",kr:"Median OS 67 vs 44 months (HAI vs no HAI, propensity matched, HR 0.60, p<0.001). 10-yr OS 38% vs 24%. Effect persisted in the modern systemic chemotherapy era. Strongest benefit: low CRS and node-negative primary.",tw:"Median OS 67 vs 44 months with vs without HAI (propensity matched). 10-year OS 38% vs 24%. Effect persisted with modern systemic chemotherapy. Strongest benefit in low clinical risk score and node-negative primary.",u:"https://pubmed.ncbi.nlm.nih.gov/28426374/"},
+"dangelica-2015":{t:"Phase II trial of hepatic artery infusional and systemic chemotherapy for patients with unresectable hepatic metastases from colorectal cancer: conversion to resection and long-term outcomes",c:"D'Angelica MI, Correa-Gallego C et al. Ann Surg. 2015;261(2):353-360.",y:2015,q:"Can HAI + systemic chemotherapy convert unresectable CRLM to resectable, and does conversion improve survival?",p:"49 patients with unresectable CRLM (65% previously treated), phase II single-arm trial",i:"HAI (FUDR) + systemic chemotherapy, with or without bevacizumab",co:"N/A - single-arm; resected vs non-resected patients compared on landmark analysis",o:"Conversion to resection rate (primary); overall survival, progression-free survival (secondary)",kr:"Conversion rate 47% (23/49). Median OS 38 months, median PFS 13 months (all patients). Landmark analysis: 3-yr OS 80% (resected, n=23) vs 26% (non-resected, n=26), p<0.001.",tw:"47% conversion rate. 3-year OS 80% vs 26% in resected vs non-resected. But this is a selection effect - patients who converted may have had favorable biology independent of surgery. The survival benefit may be in the responders, not the operation itself.",u:"https://pubmed.ncbi.nlm.nih.gov/24646562/"}
+};
+
+var STEPS=[{"type":"title","sec":"Introduction","title":"How I Think About Colorectal Liver Metastases","sub":"A Surgical Oncologist's Approach to Decision Making","body":"Camilo Correa, MD|2026","qs":["Can I remove it?","Should I remove it?","When should I remove it?"],"ids":[]},{"type":"poll","sec":"Introduction","title":"Opening Poll","opts":["A: Less than 10%","B: 10-20%","C: 20-40%","D: More than 40%"],"body":"What percentage of patients with CRLM are ultimately cured after surgery?","ids":["tomlinson-2007"]},{"type":"slide","sec":"Introduction","title":"The Five Questions","bul":["1. Can all disease be eradicated?","2. What is the biology?","3. What information would chemotherapy provide?","4. What role does liver-directed therapy play?","5. Why am I operating?"],"ids":[]},{"type":"case","sec":"Case 1: The Anatomy Question","title":"Case 1","vig":"55-year-old man. Sigmoid adenocarcinoma. CEA 12. Three liver metastases on staging CT. No obvious extrahepatic disease.","ids":[]},{"type":"slide","sec":"Case 1: The Anatomy Question","title":"Workup: What Matters?","bul":["MRI liver/Triphasic CT: identifies occult disease, clarifies segmental anatomy and proximity to major vasculature","Molecular profile: KRAS, BRAF, MSI, ctDNA","CT chest/abd/pelvis: rules out extrahepatic disease","Performance status: determines operative tolerance","Social Reserve"],"ids":[]},{"type":"wrongq","sec":"Case 1: The Anatomy Question","title":"Wrong Question","ids":["fong-1999","adam-2004"]},{"type":"slide","sec":"Case 1: The Anatomy Question","title":"Resectability: Then vs Now","bul":["1995: 4 or fewer lesions, unilobar disease, no extrahepatic disease, node-negative primary","Today: any number of lesions, bilobar disease, limited extrahepatic disease in selected patients","The criterion shifted from counting lesions to: adequate remnant + achievable margins + favorable biology"],"ids":["adam-2004","fong-1999"]},{"type":"case","sec":"Case 2: Technical vs Oncologic Resectability","title":"Case 2","sub":"Technical vs Oncologic Resectability","vig":"12 bilobar metastases. No extrahepatic disease. Good performance status. CT shows clearable disease with a two-stage approach or ALPPS.","ids":[]},{"type":"slide","sec":"Case 2: Technical vs Oncologic Resectability","title":"Creating Resectability","bul":["Portal vein embolization (PVE): hypertrophy of future liver remnant","Total venous deprivation (PVE + HVE): combined portal and hepatic vein occlusion for faster hypertrophy","Two-stage hepatectomy: staged resections when one-stage remnant is insufficient","ALPPS: rapid bilobar clearance","Ablation: parenchymal-sparing option for lesions < 3cm"],"ids":["adam-2004","ligro-2024"]},{"type":"slide","sec":"Case 2: Technical vs Oncologic Resectability","title":"Technical vs Oncologic Resectability","bul":["Technical: adequate remnant, achievable margins, patient tolerates the operation","Oncologic: biology suggests meaningful and durable benefit from resection","In 2026, most patients are technically resectable. The question should always be oncologic.","Surgical techniques solve the anatomy problem. Not the biology problem."],"ids":[]},{"type":"case","sec":"Molecular Staging","title":"Case Update: Molecular Profile","sub":"Back to Case 1","vig":"55-year-old man. Sigmoid adenocarcinoma. CEA 12. Three liver metastases on staging CT. No obvious extrahepatic disease. KRAS G12D mutation is present.","ids":["kras-2015"]},{"type":"slide","sec":"Molecular Staging","title":"Molecular Staging","bul":["RAS: most common; codon-specific biology matters for recurrence patterns","BRAF V600E: uncommon, aggressive biology, changes counseling significantly","MSI-H: rare in CRLM; immunotherapy-eligible, surgery still plays a role","HER2: emerging target, relevant to systemic therapy choice","ctDNA: post-operative surveillance and recurrence prediction"],"ids":["kras-2015","kras-2016","braf-2013"]},{"type":"slide","sec":"Molecular Staging","title":"KRAS: What It Means for Surgery","bul":["Worse OS after hepatectomy: roughly 10-15% difference at 5 years","More lung recurrence, especially codon 13 mutations","More margin recurrence","Does not prohibit surgery: changes counseling, surveillance intensity, and threshold for re-resection"],"ids":["kras-2015","kras-2016"]},{"type":"case","sec":"Molecular Staging","title":"BRAF V600E","sub":"Technically resectable. Operate?","vig":"Same favorable anatomy as Case 1. BRAF V600E mutation on molecular profiling. No extrahepatic disease.","ids":["braf-2013","braf-2019"]},{"type":"slide","sec":"Molecular Staging","title":"ctDNA After R0 Resection","bul":["ctDNA detects recurrence 6-12 months before imaging in many patients","Positive ctDNA after R0 hepatectomy predicts recurrence with high specificity","Negative ctDNA correlates with improved disease-free survival","Not yet a decision rule - the best biology marker we have right now"],"body":"Post-operative ctDNA is positive after an R0 hepatectomy.","ids":["ctdna-2021","ctdna-2024"]},{"type":"slide","sec":"Molecular Staging","title":"Good Biology vs Bad Biology","sub":"Build your own framework.","bul":["Favorable: RAS WT, BRAF WT, MSI-H, ctDNA negative, response to chemotherapy, long disease-free interval, node-negative primary","Unfavorable: KRAS G12D/G12V, BRAF V600E, N2 primary, synchronous presentation, short disease-free interval, progression on chemotherapy, positive ctDNA after treatment"],"ids":["fong-1999"]},{"type":"transition","sec":"Timing","title":"Biology determines whether surgery matters.","body":"Once anatomy is favorable and biology does not prohibit surgery, the question is timing.","ids":[]},{"type":"poll","sec":"Timing: Surgery vs Chemotherapy","title":"Poll: Timing","opts":["Team Surgery First","Team Chemotherapy First"],"body":"Resectable CRLM. Good anatomy. RAS wild-type. No extrahepatic disease. Surgery first or chemotherapy first?","ids":[]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"Team Surgery First","bul":["Avoid chemotherapy hepatotoxicity: sinusoidal obstruction syndrome, oxaliplatin neuropathy","Avoid disappearing lesions: hard to find on imaging, harder to localize intraoperatively","No risk of progression converting resectable to unresectable (?)"],"ids":["eortc-2008"]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"Team Chemotherapy First","bul":["Window to assess biology: progression on therapy is a stop rule before a major operation","Downstage marginally resectable disease to create a safer resection","Treat occult micrometastatic disease early","Identify the responders for whom surgery will matter most"],"ids":["eortc-2008","adam-2004"]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"EORTC 40983","bul":["PFS improved: ~36% vs 28% at 3 years (HR ~0.77)","OS: no statistically significant difference at long-term follow-up","Surgical complication rate higher in the perioperative chemotherapy arm"],"body":"Perioperative FOLFOX vs surgery alone in resectable CRLM.","ids":["eortc-2008","eortc-2013"]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"JCOG0603","bul":["DFS improved: 49.8 vs 24.9 months (HR 0.56)","OS: not significantly improved"],"body":"Hepatectomy + adjuvant mFOLFOX6 vs hepatectomy alone.","ids":["jcog0603"]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"New EPOC","bul":["OS: 55 months with cetuximab vs 81 months without - a meaningful harm","Cetuximab improves response in unresectable disease; worsens outcomes in resectable disease","Do not extrapolate across disease stages / treatment settings"],"body":"Perioperative chemotherapy with or without cetuximab in RAS WT resectable CRLM.","ids":["new-epoc-2014","new-epoc"]},{"type":"slide","sec":"Timing: Surgery vs Chemotherapy","title":"My Timing Algorithm","bul":["Surgery first: clearly resectable, low-risk biology, concern for disappearing lesions","Chemotherapy first: biology uncertain, marginal resectability, high tumor burden, need to test response","Either: clearly resectable, no concern for disappearing lesions, RAS WT with straightforward anatomy and low biology risk","Progression on therapy while technically resectable should prompt reconsideration of surgical plan"],"ids":["eortc-2008","jcog0603"]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"Local Therapy Goals","sub":"Match the modality to the goal.","bul":["Curative intent: resection when anatomy and biology allow","Conversion: chemotherapy with or without HAI to downstage, then reassess","Liver control: ablation, HAI, or both for liver-dominant disease","Parenchymal sparing: ablation for small peripheral lesions in patients with limited remnant","Poor PS: ablation, radiation therapy, Y90 if poor surgical tolerance anticipated"],"ids":[]},{"type":"case","sec":"Local Therapy: Ablation and HAI","title":"Case: Ablation vs Resection","vig":"3 peripheral lesions, all 2 cm or less, in a patient with prior right hepatectomy. Limited future liver remnant. Good performance status.","ids":["collision-2025"]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"COLLISION Trial","bul":["OS: non-inferior for ablation in size-matched lesions","Local recurrence higher with ablation, but salvageable in most cases","Does not mean ablation equals resection for all CRLM: it means ablation is reasonable for small peripheral lesions where remnant is the constraint"],"body":"Randomized trial of thermal ablation vs surgical resection for CRLM up to 3 cm.","ids":["collision-2025"]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"Why HAI Chemotherapy?","bul":["First-pass extraction: high local drug concentration, lower systemic exposure","Always combined with systemic therapy","Most useful in liver-dominant disease where liver control is the limiting factor for survival"],"body":"The liver is the dominant site of failure in CRLM. HAI delivers floxuridine (FUDR) at concentrations 10-400x higher than IV administration, via the hepatic artery, with lower systemic toxicity.","ids":["calgb-9481"]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"HAI Data","bul":["CALGB 9481 (RCT): response rate 47% vs 24% (p<0.001); median OS 24.4 vs 20.0 months","Groot Koerkamp 2017 (n=2,368, propensity matched): median OS 67 vs 44 months; 10-year OS 38% vs 24%","Effect persisted in the era of modern systemic chemotherapy","Strongest benefit in low clinical risk score and node-negative primary"],"ids":["calgb-9481","koerkamp-2017"]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"Conversion with HAI: The Selection Question","bul":["Median OS and PFS: 38 and 13 months","47% conversion rate / 3-year OS 80% vs 26% in resected vs non-resected patients","We do not know those patients did well because of the surgery","Surgery may be a marker of favorable biology, not the cause of survival"],"body":"D'Angelica, Correa-Gallego et al. Ann Surg 2015","ids":["dangelica-2015"]},{"type":"trial","sec":"Local Therapy: Ablation and HAI","title":"Ongoing HAI Trials","ids":[]},{"type":"slide","sec":"Local Therapy: Ablation and HAI","title":"Who I consider for HAI","bul":["Liver-only or liver-dominant disease without evidence of systemic progression","Conversion candidates: unresectable disease, good performance status, response to systemic therapy","Why is not every center doing this? Pump placement expertise, medical oncology expertise, and infrastructure all limit access."],"ids":["calgb-9481","koerkamp-2017"]},{"type":"case","sec":"The Hardest Question","title":"Case 3","vig":"BRAF V600E. Progression on two lines of systemic chemotherapy. Technically resectable on current imaging.","ids":["braf-2013","braf-2019"]},{"type":"transition","sec":"The Hardest Question","title":"Does surgery add any meaningful benefit?","body":"Am I helping the patient, or treating the scan? Technical resectability and oncologic benefit are not the same thing.","ids":[]},{"type":"slide","sec":"Synthesis","title":"The Five Questions","bul":["1. Can all disease be eradicated? - anatomy, remnant, technical feasibility","2. What is the biology? - molecular profile, ctDNA, response to treatment","3. What information would chemotherapy provide? - test biology, downstage, identify responders","4. What role does liver-directed therapy play? - ablation, HAI, staged resections","5. Why am I operating? - true benefit, or treating the scan?"],"ids":[]},{"type":"case","sec":"Synthesis","title":"Return to Case 1","sub":"Now you have the framework. Answer all five questions.","vig":"55-year-old man. Sigmoid adenocarcinoma. RAS wild-type. ctDNA negative after neoadjuvant chemotherapy. No extrahepatic disease. Three resectable liver metastases.","ids":["tomlinson-2007","kras-2015","ctdna-2021"]},{"type":"slide","sec":"Synthesis","title":"Conclusion","bul":["Trials tell you what happened on average and evolve over time.","The patient in front of you is not average.","The five questions are a framework for applying evidence to individual decisions."],"ids":[]},{"type":"closing","sec":"Synthesis","title":"The Standard of Care Is Judgment","ids":[]}];
+var cur=0;
+
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function render(){
+  var step=STEPS[cur],total=STEPS.length;
+  var pct=((cur+1)/total)*100;
+  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('slideNum').textContent=(cur+1)+' / '+total;
+  document.getElementById('prevBtn').disabled=(cur===0);
+  document.getElementById('nextBtn').disabled=(cur===total-1);
+  document.getElementById('slide').innerHTML=buildCard(step,cur+1,total);
+  document.querySelectorAll('.chip').forEach(function(el){
+    el.addEventListener('click',function(){openModal(el.getAttribute('data-id'));});
+  });
+}
+
+function buildCard(s,n,total){
+  var isdk=(s.type==='title'||s.type==='transition'||s.type==='closing');
+  var h='<div class="card type-'+s.type+'">';
+  h+='<div class="card-header"><span class="card-section">'+esc(s.sec)+'</span><span class="card-num">'+n+' / '+total+'</span></div>';
+
+  if(s.type==='title'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    if(s.sub)h+='<p class="card-sub">'+esc(s.sub)+'</p>';
+    if(s.body){s.body.split('|').forEach(function(line,idx){h+='<p class="card-sub" style="color:rgba(255,255,255,.55);margin-top:'+(idx===0?'clamp(14px,2.5vh,32px)':'6px')+';">'+esc(line.trim())+'</p>';});}
+    if(s.qs){h+='<div class="title-qs">';s.qs.forEach(function(q){h+='<span class="title-q">'+esc(q)+'</span>';});h+='</div>';}
+  } else if(s.type==='transition'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    if(s.body)h+='<p class="card-body">'+esc(s.body)+'</p>';
+  } else if(s.type==='closing'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    h+='<div class="closing-rule"></div>';
+  } else if(s.type==='wrongq'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    h+='<p class="wq-cross">How many metastases are too many?</p>';
+    h+='<div class="wq-lbl">Better question</div>';
+    h+='<p class="wq-right">Can all disease be eradicated while preserving adequate liver function?</p>';
+    h+='<p class="wq-note">Number-based resectability criteria: 1995. Today: margin, remnant, and biology.</p>';
+  } else if(s.type==='poll'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    if(s.body)h+='<p class="card-body">'+esc(s.body)+'</p>';
+    if(s.opts){h+='<div class="poll-opts">';s.opts.forEach(function(o){h+='<div class="poll-opt">'+esc(o)+'</div>';});h+='</div>';}
+  } else if(s.type==='case'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    if(s.sub)h+='<p class="card-sub">'+esc(s.sub)+'</p>';
+    if(s.vig)h+='<div class="vignette">'+esc(s.vig)+'</div>';
+  } else if(s.type==='trial'){
+    h+='<h2>'+esc(s.title)+'</h2>';
+    h+='<div class="trial-row">';
+    h+='<img src="../hai%20trial%20prop.png" alt="Adjuvant HAI trial proposal under ECOG review, June 2026">';
+    h+='<div class="trial-text">';
+    h+='<p class="card-section" style="margin-bottom:8px;">PUMP Trial (NCT05863195, EA2222)</p>';
+    h+='<ul class="bullets"><li>ECOG-ACRIN Phase III, actively recruiting</li><li>HAI + systemic chemotherapy vs systemic alone for unresectable CRLM</li><li>Primary endpoint: overall survival</li><li>~60 sites, target enrollment 408; Mount Sinai is a participating site</li></ul>';
+    h+='<p class="card-section" style="margin-top:14px;margin-bottom:6px;">Adjuvant HAI after Resection (proposed)</p>';
+    h+='<p class="card-body" style="font-size:.9rem;">Proposal under review by ECOG executive committee, June 2026</p>';
+    h+='</div></div>';
+  } else {
+    h+='<h2>'+esc(s.title)+'</h2>';
+    if(s.sub)h+='<p class="card-sub">'+esc(s.sub)+'</p>';
+    if(s.body)h+='<p class="card-body">'+esc(s.body)+'</p>';
+    if(s.bul){h+='<ul class="bullets">';s.bul.forEach(function(b){h+='<li>'+esc(b)+'</li>';});h+='</ul>';}
+  }
+
+  if(s.ids&&s.ids.length){
+    h+='<div class="chips">';
+    s.ids.forEach(function(id){var st=S[id];if(st)h+='<button class="chip" data-id="'+esc(id)+'">'+esc(st.c.split(' ')[0]+' '+st.y)+'</button>';});
+    h+='</div>';
+  }
+  h+='</div>';
+  return h;
+}
+
+function buildRefs(){
+  var g=document.getElementById('refsGrid');
+  var ids=Object.keys(S).sort(function(a,b){return S[a].y-S[b].y;});
+  var h='';
+  ids.forEach(function(id){
+    var st=S[id];
+    h+='<button class="ref-card" data-id="'+esc(id)+'">';
+    h+='<span class="ref-yr">'+st.y+'</span>';
+    h+='<div class="ref-body"><h4>'+esc(st.t)+'</h4><p>'+esc(st.c)+'</p><p class="ref-pm">Open PubMed</p></div>';
+    h+='</button>';
+  });
+  g.innerHTML=h;
+  g.querySelectorAll('.ref-card').forEach(function(el){
+    el.addEventListener('click',function(){openModal(el.getAttribute('data-id'));closeRefs();});
+  });
+}
+
+function openModal(id){
+  var st=S[id];if(!st)return;
+  document.getElementById('mYr').textContent=st.y;
+  document.getElementById('mTt').textContent=st.t;
+  document.getElementById('mCt').textContent=st.c;
+  document.getElementById('mQ').textContent=st.q;
+  document.getElementById('mP').textContent=st.p;
+  document.getElementById('mI').textContent=st.i;
+  document.getElementById('mC').textContent=st.co;
+  document.getElementById('mO').textContent=st.o;
+  document.getElementById('mKr').textContent=st.kr||'';
+  document.getElementById('mTw').textContent=st.tw;
+  document.getElementById('mPm').href=st.u;
+  document.getElementById('modalOv').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('modalOv').classList.remove('open');}
+function openRefs(){document.getElementById('refsOv').classList.add('open');}
+function closeRefs(){document.getElementById('refsOv').classList.remove('open');}
+
+function goNext(){if(cur<STEPS.length-1){cur++;render();}}
+function goPrev(){if(cur>0){cur--;render();}}
+
+document.getElementById('nextBtn').addEventListener('click',goNext);
+document.getElementById('prevBtn').addEventListener('click',goPrev);
+document.getElementById('refsBtn').addEventListener('click',openRefs);
+document.getElementById('refsClose').addEventListener('click',closeRefs);
+document.getElementById('mCl1').addEventListener('click',closeModal);
+document.getElementById('mCl2').addEventListener('click',closeModal);
+document.getElementById('refsOv').addEventListener('click',function(e){if(e.target===this)closeRefs();});
+document.getElementById('modalOv').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+document.addEventListener('keydown',function(e){
+  var mo=document.getElementById('modalOv').classList.contains('open');
+  var ro=document.getElementById('refsOv').classList.contains('open');
+  if(e.key==='Escape'){if(mo){closeModal();return;}if(ro){closeRefs();return;}}
+  if(mo||ro)return;
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();goNext();}
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();goPrev();}
+});
+
+render();
+buildRefs();
+})();
+
+</script>
+</body>
+</html>
