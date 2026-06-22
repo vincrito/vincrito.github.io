@@ -79,6 +79,9 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--gray-100);col
 .refs-panel{background:#fff;width:100%;max-width:960px;border-radius:16px;box-shadow:0 20px 40px rgba(15,35,64,.2);}
 .refs-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--gray-200);}
 .refs-hd h3{font-size:1.05rem;color:var(--navy);}
+.refs-hd-left{display:flex;align-items:center;gap:12px;}
+.refs-dl{background:var(--green-pale);border:1px solid #b8e8d3;border-radius:6px;padding:4px 13px;font-size:11px;font-weight:600;color:var(--green);text-decoration:none;}
+.refs-dl:hover{background:#c9f0e0;}
 .refs-cl{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:6px;padding:5px 14px;font-size:12px;color:var(--text-muted);cursor:pointer;font-family:inherit;}
 .refs-grid{display:flex;flex-direction:column;padding:8px 22px 20px;}
 .ref-card{background:none;border:none;border-bottom:1px solid var(--gray-200);padding:12px 0;cursor:pointer;text-align:left;width:100%;font-family:inherit;display:flex;align-items:baseline;gap:16px;transition:background .1s;}
@@ -132,7 +135,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--gray-100);col
 </div>
 <div id="refsOv" class="refs-ov">
   <div class="refs-panel">
-    <div class="refs-hd"><h3>Reference Library</h3><button class="refs-cl" id="refsClose">Close</button></div>
+    <div class="refs-hd"><div class="refs-hd-left"><h3>Reference Library</h3><a class="refs-dl" href="crlm-references.pdf" download>Download PDF</a></div><button class="refs-cl" id="refsClose">Close</button></div>
     <div class="refs-grid" id="refsGrid"></div>
   </div>
 </div>
