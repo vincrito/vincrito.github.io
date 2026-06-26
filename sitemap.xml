@@ -57,6 +57,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://correasurgery.com/conditions/crlm.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://correasurgery.com/conditions/hcc.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://correasurgery.com/conditions/bile-duct-cancer.html</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
